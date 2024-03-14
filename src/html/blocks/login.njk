@@ -1,0 +1,65 @@
+<section class="login section">
+  <div class="container">
+    <ul class="login__breadcrumbs breadcrumbs">
+      <li><a href="/">Главная/</a></li>
+      <li>Кабинет</li>
+    </ul>
+    <h1 class="login__title title">Кабинет пользователя</h1>
+    <p class="login__text">
+      Краткое описание, о том, для кого доступ в личный кабинет и какие преимущества и доп услуги смогут приобрести
+    </p>
+    <div class="login__inner">
+      <div class="login__content">
+        <div class="login__form is-active" data-tabs="1">
+          <form>
+            <div class="login__form-inner">
+              <p class="login__subtitle">Вход</p>
+              <div class="login__items">
+                <div class="login__item">
+                  <input class="login__input form-control" type="email" placeholder="Email" />
+                </div>
+                <div class="login__item form-password">
+                  <input class="login__input form-control" type="password" placeholder="Пароль" />
+                  <button class="form-password__btn" type="button" title="Показать/скрыть пароль"></button>
+                </div>
+              </div>
+              <div class="login__bottom">
+                <label class="login__check form-check">
+                  <input type="checkbox" />
+                  <span class="form-check__box"></span>
+                  <span class="form-check__text">Запомнить меня</span>
+                </label>
+                <a class="login__link" href="#" data-tabs="2">Забыли пароль?</a>
+              </div>
+              <div class="text-center">
+                <button class="login__btn btn-primary">Войти</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="login__form" data-tabs="2">
+          <form>
+            <div class="login__form-inner">
+              <p class="login__subtitle">Восстановление пароля</p>
+              <div class="login__items">
+                <div class="login__item">
+                  <input class="login__input form-control is-invalid" type="email" placeholder="Почта" />
+                </div>
+              </div>
+              <div class="login__error form-error">Email не обнаружен</div>
+              <div class="text-center">
+                <button class="login__btn btn-primary">Восстановить пароль</button>
+                <br />
+                <a class="login__link is-active" href="#" data-tabs="1">Я вспомнил пароль</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="login__img">
+        <img src="img/profile-bg.svg" width="560" height="442" alt="" />
+      </div>
+    </div>
+  </div>
+</section>

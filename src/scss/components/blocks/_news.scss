@@ -1,0 +1,175 @@
+.news {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 44px;
+  }
+
+  &__title {
+    margin-right: 20px;
+  }
+
+  &__slider-inner {
+    overflow: hidden;
+  }
+
+  &__slider {
+    margin: -30px;
+    padding: 30px;
+
+    .splide {
+      &__track {
+        overflow: visible;
+      }
+
+      &__arrow {
+        position: absolute;
+        top: 50%;
+        opacity: 0.5;
+        transform: translateY(-50%);
+        transition: opacity $transition;
+
+        &--prev {
+          left: 0;
+        }
+
+        &--next {
+          right: 0;
+        }
+
+        @include hover {
+          opacity: 1;
+        }
+      }
+
+      &__slide {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__btn-wrapper {
+    margin-top: 44px;
+    text-align: center;
+  }
+
+  &__link {
+    transition: color $transition;
+
+    @include hover {
+      color: $blue;
+    }
+  }
+
+  &--padding-b {
+    padding-bottom: 40px;
+  }
+}
+
+.news-card {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  border-radius: 28px;
+  background-color: $substrate;
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 45%;
+    height: 0;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition;
+    }
+  }
+
+  &__wrapper {
+    display: block;
+    flex-grow: 1;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 26px 17px;
+  }
+
+  &__info {
+    margin-right: 12px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    transition: color $transition;
+  }
+
+  &__stat {
+    display: flex;
+  }
+
+  &__stat-item {
+    @include mr(22px);
+  }
+
+  &__views {
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg width='31' height='27' viewBox='0 0 31 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.5713 3.80578C12.7433 3.433 14.0275 3.21484 15.4284 3.21484C20.8052 3.21484 24.4644 6.42856 26.6464 9.26327C27.7391 10.683 28.2856 11.3928 28.2856 13.5006C28.2856 15.6084 27.7391 16.3182 26.6464 17.7379C24.4644 20.5725 20.8052 23.7863 15.4284 23.7863C10.0517 23.7863 6.39238 20.5725 4.21043 17.7379C3.11767 16.3182 2.57129 15.6084 2.57129 13.5006C2.57129 11.3928 3.11767 10.683 4.21043 9.26327C4.82916 8.45945 5.56666 7.62517 6.42843 6.84232' stroke='%23575965' stroke-width='1.92857' stroke-linecap='round'/%3E%3Cpath d='M19.2858 13.5002C19.2858 15.6305 17.559 17.3574 15.4287 17.3574C13.2984 17.3574 11.5715 15.6305 11.5715 13.5002C11.5715 11.3699 13.2984 9.64307 15.4287 9.64307C17.559 9.64307 19.2858 11.3699 19.2858 13.5002Z' stroke='%23575965' stroke-width='1.92857'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+  &__likes {
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg width='26' height='27' viewBox='0 0 26 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2003_754)'%3E%3Cpath d='M20.7344 15.1313L12.6071 23.8838L4.47975 15.1313L3.37243 13.9388C2.29468 12.7782 1.68921 11.204 1.68921 9.5626C1.68921 7.92119 2.29468 6.347 3.37243 5.18635C4.45018 4.0257 5.91192 3.37365 7.43609 3.37365C8.96026 3.37365 10.422 4.0257 11.4998 5.18635L12.6071 6.37885L13.7144 5.18635C14.248 4.61148 14.8815 4.15545 15.5787 3.84432C16.276 3.53319 17.0233 3.37305 17.7781 3.37305C18.5328 3.37305 19.2801 3.53319 19.9774 3.84432C20.6747 4.15545 21.3082 4.61148 21.8417 5.18635C22.3755 5.76095 22.799 6.44318 23.0879 7.19408C23.3768 7.94497 23.5255 8.7498 23.5255 9.5626' stroke='%23575965' stroke-width='1.92857' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2003_754'%3E%3Crect width='25.0714' height='27' fill='white' transform='translate(0.0714111)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    }
+  }
+
+  &__views,
+  &__likes {
+    position: relative;
+    padding-left: 32px;
+    font-size: 23px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 26px;
+      height: 27px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+    }
+  }
+
+  @include hover {
+    .news-card__img img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.news-page {
+  padding-top: 0;
+
+  &__title {
+    margin-bottom: 18px;
+  }
+
+  &__list {
+    @include grid(2, 20px);
+
+    margin-bottom: 44px;
+  }
+}

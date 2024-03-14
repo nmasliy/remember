@@ -1,0 +1,133 @@
+.footer {
+  padding: 60px 0 32px;
+  color: $white;
+  background-color: $carbon;
+
+  &__form {
+    @include grid(2, 20px);
+
+    align-items: center;
+    margin-bottom: 60px;
+    border-bottom: 1px solid $midnight;
+    padding-bottom: 50px;
+  }
+
+  &__form-inner {
+    display: flex;
+  }
+
+  &__form-title {
+    font-weight: 500;
+    font-size: 28px;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    margin-right: 16px;
+  }
+
+  &__input {
+    flex-grow: 1;
+    outline: none;
+    border: 1px solid $midnight;
+    border-radius: 16px;
+    padding: 16px;
+    width: 100%;
+    color: $white;
+    background-color: $carbon;
+    transition: border $transition;
+
+    &:focus,
+    &:active {
+      border-color: $white;
+    }
+
+    &.is-invalid {
+      border-color: $red;
+    }
+
+    &.is-valid {
+      border-color: $green;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    margin-bottom: 32px;
+    border-bottom: 1px solid $midnight;
+    padding-bottom: 60px;
+    gap: 20px;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    p {
+      @include mb(15px);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: -11px -22px;
+
+    li {
+      margin: 11px 22px;
+    }
+
+    a {
+      transition: color $transition;
+
+      @include hover {
+        color: $yellow;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &__payments {
+    display: flex;
+    align-items: center;
+
+    li {
+      @include mr(20px);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: transform $transition;
+
+      @include hover {
+        transform: translateY(-2px);
+      }
+    }
+
+    li {
+      @include mr(32px);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+// root
+:root {
+  --content-width: 1120px;
+  --container-offset: 10px;
+  --container-width: calc(var(--content-width) + var(--container-offset) * 2);
+  --window-height: 100%;
+  --header-height: 60px;
+}
+
+// font
+$font-family: "SF Pro Display", sans-serif;
+
+// transitions
+$transition: 0.25s ease-in-out;
+$animation-transition: 0.6s cubic-bezier(0.45, 0.205, 0.175, 0.85);
+$mouse-transition: 2s cubic-bezier(0.05, 0.5, 0, 1);
+$menu-transition: 0.35s ease-in-out;
+$menu-breakpoint: 1024px;
+
+// colors
+$black: #000;
+$carbon: #333;
+$midnight: #575965;
+$substrate: #f9f9f9;
+$white: #ebebe7;
+$background: #fff;
+$blue: #1a5fd0;
+$yellow: #ffe661;
+$red: #ff8a8a;
+$green: #84dc68;

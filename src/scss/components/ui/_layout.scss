@@ -1,0 +1,161 @@
+.page-wrapper {
+  @include footerToBottom;
+
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.title {
+  font-weight: 600;
+  font-size: 44px;
+  color: $carbon;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 28px;
+  color: $carbon;
+}
+
+.main {
+  padding-bottom: 40px;
+}
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.decor {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      url("../img/decor-1.png") top 611px right no-repeat,
+      url("../img/decor-2.png") top 1154px left no-repeat,
+      url("../img/decor-3.png") top 1652px right no-repeat,
+      url("../img/decor-4.png") top 2478px left no-repeat;
+  }
+}
+
+.decor-2 {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      url("../img/decor-1.png") top 151px right no-repeat,
+      url("../img/decor-2.png") top 694px left no-repeat,
+      url("../img/decor-3.png") top 1231px right no-repeat,
+      url("../img/decor-4.png") top 1978px left no-repeat;
+  }
+}
+
+.breadcrumbs {
+  padding: 10px 0 24px;
+  color: $carbon;
+
+  a {
+    transition: color $transition;
+
+    @include hover {
+      color: $blue;
+    }
+  }
+
+  li {
+    display: inline;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -5px;
+  font-weight: 500;
+  font-size: 28px;
+
+  &__item {
+    margin: 0 5px;
+    border-radius: 50%;
+    text-align: center;
+    transition: $transition;
+
+    a {
+      @include flex-center;
+
+      width: 40px;
+      height: 40px;
+    }
+
+    &.is-active {
+      color: $yellow;
+      background-color: $carbon;
+    }
+  }
+
+  &__arrow {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    a {
+      display: block;
+      width: 28px;
+      height: 52px;
+    }
+
+    &--prev {
+      margin-right: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg width='11' height='26' viewBox='0 0 11 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 24L2.5 13L8.5 2' stroke='%23575965' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    }
+
+    &--next {
+      margin-left: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg width='11' height='26' viewBox='0 0 11 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 2L8.5 13L2.5 24' stroke='%23575965' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+  &__item,
+  &__arrow {
+    a {
+      transition: transform $transition;
+
+      &:not(.is-disabled),
+      &:not(.is-active) {
+        @include hover {
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    &:disabled,
+    &.is-disabled {
+      opacity: 0.4;
+    }
+  }
+}

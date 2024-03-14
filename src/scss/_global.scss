@@ -1,0 +1,88 @@
+// Fonts
+@include font-face("SF Pro Display", "SFProDisplay-Regular", 400, normal);
+@include font-face("SF Pro Display", "SFProDisplay-Medium", 500, normal);
+@include font-face("SF Pro Display", "SFProDisplay-Semibold", 600, normal);
+@include font-face("SF Pro Display", "SFProDisplay-Bold", 700, normal);
+
+// General
+html {
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  outline-width: 1px;
+  outline-color: rgba($yellow, 0.3);
+  outline-offset: 3px;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-family: $font-family;
+  font-size: 20px;
+  line-height: normal;
+  color: $midnight;
+  background-color: $background;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input::placeholder {
+  color: $white;
+}
+
+img,
+video,
+iframe {
+  vertical-align: middle;
+  height: auto;
+  max-width: 100%;
+}
+
+input,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+button,
+input[type="button"] {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Стилизация input[type="number"] */
+/* Убираем стрелки во всех браузерах, где это возможно */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

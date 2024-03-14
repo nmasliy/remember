@@ -1,0 +1,9 @@
+.socials {
+  ul {
+    @include flex-center;
+  }
+
+  li {
+    @include mr(12px);
+  }
+}

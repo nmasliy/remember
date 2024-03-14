@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/libs.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="decor-2">
+  <div class="page-wrapper">
+
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a class="header__logo" href="/">
+            <img src="img/logo.svg" width="218" height="144" alt="Логотип Згадай мене" />
+          </a>
+          <div class="header__menu menu">
+            <nav class="header__nav nav">
+              <ul class="header__list">
+                <li class="is-active">
+                  <a href="/">Главная</a>
+                </li>
+                <li>
+                  <a href="/product.html">Магазин</a>
+                </li>
+                <li>
+                  <a href="/login.html">Кабинет</a>
+                </li>
+                <li>
+                  <a href="/about.html">О нас</a>
+                </li>
+                <li>
+                  <a href="/news.html">Новости</a>
+                </li>
+                <li>
+                  <a href="/contacts.html">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <a class="header__cart" href="/cart.html"></a>
+          <button class="header__burger burger">
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="header-overlay"></div>
+    </header>
+
+    <main class="main">
+
+      <section class="order section">
+        <div class="container">
+          <ul class="order__breadcrumbs breadcrumbs">
+            <li><a href="/">Главная/</a></li>
+            <li>Оформление заказа</li>
+          </ul>
+          <div class="order__inner">
+            <h1 class="order__title title">Оформление заказа</h1>
+            <div class="order__form order-form">
+              <form>
+                <div class="order-form__inner">
+                  <div class="order-form__main">
+                    <div class="order-form__box">
+                      <p class="order-form__title">1. Личные данные</p>
+                      <div class="order-form__tabs-wrapper">
+                        <div class="order-form__tabs">
+                          <button class="order-form__tab is-active" data-tabs="1" type="button">Я новый покупатель</button>
+                          <button class="order-form__tab" data-tabs="2" type="button">Я постоянный клиент</button>
+                        </div>
+                      </div>
+                      <div class="order-form__tabs-content">
+                        <div class="order-form__tabs-item is-active" data-tabs="1">
+                          <div class="order-form__item">
+                            <input class="order-form__input form-control" type="text" placeholder="ФИО" />
+                          </div>
+                          <div class="order-form__item">
+                            <input class="order-form__input form-control" type="email" placeholder="Почта" />
+                          </div>
+                          <div class="order-form__item">
+                            <input class="order-form__input form-control" type="tel" placeholder="Номер телефона" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="order-form__tabs-item" data-tabs="2">
+                        <div class="order-form__items">
+                          <div class="order-form__item">
+                            <input class="order-form__input form-control is-invalid" type="text" placeholder="Логин" />
+                          </div>
+                          <div class="order-form__item">
+                            <input class="order-form__input form-control is-invalid" type="password" placeholder="Пароль" />
+                          </div>
+                        </div>
+                        <div class="order-form__error form-error">Неверный логин или пароль</div>
+                        <div class="order-form__bottom">
+                          <button class="order-form__btn btn-primary" disabled>Войти</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="order-form__box">
+                      <p class="order-form__title">2. Вариант оплаты</p>
+                      <div class="order-form__radios form-radio-icons">
+                        <label class="form-radio-icons__item">
+                          <input type="radio" name="payment" value="apple_pay" />
+                          <span class="form-radio-icons__body">
+                      <img src="img/apple-pay-icon.svg" width="56" height="23" alt="Apple Pay" />
+                    </span>
+                        </label>
+                        <label class="form-radio-icons__item">
+                          <input type="radio" name="payment" value="google_pay" />
+                          <span class="form-radio-icons__body">
+                      <img src="img/google-pay-icon.svg" width="62" height="24" alt="Google Pay" />
+                    </span>
+                        </label>
+                        <label class="form-radio-icons__item">
+                          <input type="radio" name="payment" value="visa" />
+                          <span class="form-radio-icons__body">
+                      <img src="img/visa-icon.svg" width="94" height="22" alt="Visa" />
+                    </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="order-form__box">
+                      <p class="order-form__title">3. Способ получения</p>
+                      <div class="order-form__radios order-form__radios--tabs form-radio-icons">
+                        <label class="form-radio-icons__item is-active" data-tabs="1">
+                          <input type="radio" name="delivery" value="delivery_1" />
+                          <span class="form-radio-icons__body">
+                      <img src="img/delivery-icon-1.png" width="86" height="36" alt="новапошта" />
+                    </span>
+                        </label>
+                        <label class="form-radio-icons__item" data-tabs="2">
+                          <input type="radio" name="delivery" value="delivery_2" />
+                          <span class="form-radio-icons__body">
+                      <img src="img/delivery-icon-2.png" width="86" height="28" alt="укрпошта" />
+                    </span>
+                        </label>
+                      </div>
+                      <div class="order-form__radio-content is-active" data-tabs="1">
+                        <div class="order-form__item">
+                          <input class="order-form__input form-control" type="text" placeholder="Город" />
+                        </div>
+                        <div class="order-form__item">
+                          <input class="order-form__input form-control" type="text" placeholder="Отделение" />
+                        </div>
+                      </div>
+                      <div class="order-form__radio-content" data-tabs="2">
+                        <div class="order-form__item">
+                          <input class="order-form__input form-control" type="text" placeholder="Индекс" />
+                        </div>
+                        <div class="order-form__item">
+                          <input class="order-form__input form-control" type="text" placeholder="Область" />
+                        </div>
+                        <div class="order-form__item">
+                          <input class="order-form__input form-control" type="text" placeholder="Район" />
+                        </div>
+                        <div class="order-form__item">
+                          <input class="order-form__input form-control" type="text" placeholder="Населенный пункт" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="order-form__box">
+                      <p class="order-form__title">4. Комментарий (не обязательно)</p>
+                      <div class="order-form__item">
+                        <input class="order-form__input form-control" type="text" placeholder="Введите комментарий" />
+                      </div>
+                      <div class="order-form__item">
+                        <textarea class="form-control" rows="5" placeholder="Введите комментарий"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="order-form__finish order-finish">
+                    <p class="order-form__title order-form__title--center">Подтверждение покупки</p>
+                    <header class="order-finish__header">
+                      <div class="order-finish__img">
+                        <img src="img/qr.png" width="76" height="72" alt="Фото товара" />
+                      </div>
+                      <div class="order-finish__info">
+                        <p class="order-finish__name">Название товара</p>
+                        <div class="order-finish__table">
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td>Количество:</td>
+                                <td>4</td>
+                              </tr>
+                              <tr>
+                                <td>Цена за единицу товара:</td>
+                                <td>$100</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="order-finish__body">
+                      <div class="order-finish__promo">
+                        <div class="order-finish__promo-field">
+                          <input class="order-finish__promo-input is-valid" type="text" placeholder="Промокод" value="SALE20" />
+                          <div class="order-finish__promo-caption">Промокод найден</div>
+                        </div>
+                        <button class="order-finish__promo-btn btn-primary btn-primary--sm" type="button">Применить</button>
+                      </div>
+                      <div class="order-finish__table">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td>Доставка:</td>
+                              <td>$0</td>
+                            </tr>
+                            <tr>
+                              <td>Скидка:</td>
+                              <td>$10</td>
+                            </tr>
+                            <tr>
+                              <td>Промокод:</td>
+                              <td>$20</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <footer class="order-finish__footer">
+                      <div class="order-finish__total">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td class="order-finish__total-caption">Итоговая стоимость</td>
+                              <td class="order-finish__total-price">$90 <span class="order-finish__price-old">$90</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <button class="order-finish__btn btn-primary" disabled>Оформить заказ</button>
+                    </footer>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__form">
+            <p class="footer__form-title">Подпишитесь на уведомления</p>
+            <form>
+              <div class="footer__form-inner">
+                <div class="footer__input-wrapper">
+                  <input class="footer__input" type="email" placeholder="Введите email" />
+                </div>
+                <button class="footer__btn btn-primary btn-primary--sm">Подписаться</button>
+              </div>
+            </form>
+          </div>
+          <div class="footer__body">
+            <div class="footer__info">
+              <a class="footer__logo" href="/">
+                <img src="img/logo-white.svg" width="206" height="33" alt="Логотип Згадай мене" />
+              </a>
+              <div class="footer__text">
+                <p>Описание</p>
+              </div>
+            </div>
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li><a href="/product.html">Магазин</a></li>
+                <li><a href="/login.html">Кабинет</a></li>
+                <li><a href="/about.html">О нас</a></li>
+                <li><a href="/news.html">Новости</a></li>
+                <li><a href="/contacts.html">Контакты</a></li>
+                <li><a href="/policy.html">Политика конфиденциальности</a></li>
+                <li><a href="/policy.html">Пользовательское соглашение</a></li>
+                <li><a href="/policy.html">Условия предоставления услуг</a></li>
+                <li><a href="/policy.html">Доставка и возврат</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__bottom">
+            <ul class="footer__payments">
+              <li><img src="img/visa.svg" width="64" height="40" alt="Visa" /></li>
+              <li><img src="img/mastercard.svg" width="64" height="40" alt="Mastercard" /></li>
+            </ul>
+            <ul class="footer__socials">
+              <li><a href="#" title="Связаться в Facebook" style="background-image: url('img/fb-icon.svg');"></a></li>
+              <li><a href="#" title="Связаться в Instagram" style="background-image: url('img/insta-icon.svg');"></a></li>
+              <li><a href="#" title="Связаться в Telegram" style="background-image: url('img/tg-icon.svg');"></a></li>
+              <li><a href="#" title="Связаться в Whatsapp" style="background-image: url('img/whatsapp-icon.svg');"></a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer__caption">Згадай мене 2024 © Все права защищены</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="modal modal-main" id="modal-1" aria-hidden="true">
+    <div class="modal__wrapper">
+      <div class="modal__inner">
+        <div class="modal__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum corrupti, officia omnis vitae quae quidem nostrum
+          aliquid voluptas consectetur laudantium, qui excepturi recusandae dolorem doloribus aperiam ratione eius numquam
+          debitis.
+        </div>
+        <button class="modal__close btn-close" data-modal-close></button>
+      </div>
+    </div>
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/splide.min.js"></script>
+  <script src="js/fslightbox.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

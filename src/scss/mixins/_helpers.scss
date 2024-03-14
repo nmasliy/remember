@@ -1,0 +1,42 @@
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin img-hover-scale {
+  overflow: hidden;
+
+  img {
+    transition: transform $transition;
+  }
+
+  @include hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: calc($height / ($width / 100%));
+  height: 0;
+
+  > img,
+  > video,
+  > iframe {
+    object-fit: cover;
+  }
+
+  > *:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

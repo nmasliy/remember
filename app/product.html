@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/libs.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="decor">
+  <div class="page-wrapper">
+
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a class="header__logo" href="/">
+            <img src="img/logo.svg" width="218" height="144" alt="Логотип Згадай мене" />
+          </a>
+          <div class="header__menu menu">
+            <nav class="header__nav nav">
+              <ul class="header__list">
+                <li class="is-active">
+                  <a href="/">Главная</a>
+                </li>
+                <li>
+                  <a href="/product.html">Магазин</a>
+                </li>
+                <li>
+                  <a href="/login.html">Кабинет</a>
+                </li>
+                <li>
+                  <a href="/about.html">О нас</a>
+                </li>
+                <li>
+                  <a href="/news.html">Новости</a>
+                </li>
+                <li>
+                  <a href="/contacts.html">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <a class="header__cart" href="/cart.html"></a>
+          <button class="header__burger burger">
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="header-overlay"></div>
+    </header>
+
+    <main class="main">
+
+      <section class="product section">
+        <div class="container">
+          <ul class="product__breadcrumbs breadcrumbs">
+            <li><a href="/">Главная/</a></li>
+            <li>Магазин</li>
+          </ul>
+          <div class="product__inner">
+            <div class="product__media">
+              <div class="product__slider splide">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="278" height="262" alt="">
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="278" height="262" alt="">
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="278" height="262" alt="">
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="278" height="262" alt="">
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="278" height="262" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="product__thumbs splide">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="60" height="60" alt="">
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="60" height="60" alt="">
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="60" height="60" alt="">
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="60" height="60" alt="">
+                    </li>
+                    <li class="splide__slide">
+                      <img src="img/qr.png" width="60" height="60" alt="">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="product__content">
+              <h1 class="product__title title">Название товара</h1>
+              <div class="product__rating"><span>5.0</span>- 147 оценок товара</div>
+              <p class="product__text">Данный товар купили 474 раза</p>
+              <div class="product__form">
+                <form>
+                  <div class="product__form-inner">
+                    <div class="product__counter counter">
+                      <button class="counter__btn counter__btn--minus" type="button"></button>
+                      <input class="counter__input" type="number" name="product_count" min="1" max="99" value="1" />
+                      <button class="counter__btn counter__btn--plus" type="button"></button>
+                    </div>
+                    <button class="product__btn btn-primary">Добавить в корзину</button>
+                  </div>
+                </form>
+              </div>
+              <p class="product__text">Добавьте еще 1 товар и получите скидку 10%</p>
+              <p class="product__price">$<span data-price="100" id="productPrice">100</span></p>
+              <div class="product__info">
+                <p>Описание товара Описание товара Описание товара Описание товара Описание товара Описание товара
+                  Описание товара Описание товара Описание товара Описание товара Описание товара </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="benefits section">
+        <div class="container">
+          <div class="benefits__inner">
+            <h2 class="benefits__title title">Преимущества покупки</h2>
+            <ul class="benefits__list">
+              <li class="benefits__item benefits__item--yellow">
+                <div class="benefits__info">
+                  <h4 class="benefits__name benefits__info-name">Увековечить память о близком</h4>
+                  <div class="benefits__icon" style="background-image: url('img/benefits-icon-1.svg');"></div>
+                </div>
+                <div class="benefits__hover">
+                  <p class="benefits__name benefits__hover-name">Воспоминания всегда под рукой</p>
+                  <div class="benefits__hover-img">
+                    <img src="img/benefits-1.jpg" width="360" height="240" alt="" />
+                  </div>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <div class="benefits__info">
+                  <h4 class="benefits__name benefits__info-name">Настройка доступа к странице</h4>
+                  <div class="benefits__icon" style="background-image: url('img/benefits-icon-2.svg');"></div>
+                </div>
+                <div class="benefits__hover">
+                  <p class="benefits__name benefits__hover-name">Гибкие настройки отображаемой информации и доступа</p>
+                  <div class="benefits__hover-img">
+                    <img src="img/benefits-2.jpg" width="360" height="240" alt="" />
+                  </div>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <div class="benefits__info">
+                  <h4 class="benefits__name benefits__info-name">Видеоролики <br />
+              на память от нас</h4>
+                  <div class="benefits__icon" style="background-image: url('img/benefits-icon-3.svg');"></div>
+                </div>
+                <div class="benefits__hover">
+                  <p class="benefits__name benefits__hover-name">Создадим качественный видеоролик с вашими изображениями</p>
+                  <div class="benefits__hover-img">
+                    <img src="img/benefits-3.jpg" width="360" height="240" alt="" />
+                  </div>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <div class="benefits__info">
+                  <h4 class="benefits__name benefits__info-name">Обработаем <br />
+              ваше фото</h4>
+                  <div class="benefits__icon" style="background-image: url('img/benefits-icon-4.svg');"></div>
+                </div>
+                <div class="benefits__hover">
+                  <p class="benefits__name benefits__hover-name">Наши дизайнеры улучшат качество вашего фото</p>
+                  <div class="benefits__hover-img">
+                    <img src="img/benefits-4.jpg" width="360" height="240" alt="" />
+                  </div>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <div class="benefits__info">
+                  <h4 class="benefits__name benefits__info-name">Редактирование в любой момент</h4>
+                  <div class="benefits__icon" style="background-image: url('img/benefits-icon-5.svg');"></div>
+                </div>
+                <div class="benefits__hover">
+                  <p class="benefits__name benefits__hover-name">Вы всегда сможете изменять и дополнять информацию</p>
+                  <div class="benefits__hover-img">
+                    <img src="img/benefits-5.jpg" width="360" height="240" alt="" />
+                  </div>
+                </div>
+              </li>
+              <li class="benefits__item">
+                <div class="benefits__info">
+                  <h4 class="benefits__name benefits__info-name">Вечная <br />
+              гарантия на QR</h4>
+                  <div class="benefits__icon" style="background-image: url('img/benefits-icon-6.svg');"></div>
+                </div>
+                <div class="benefits__hover">
+                  <p class="benefits__name benefits__hover-name">Мы обеспечиваем круглосуточную работу нашего проекта</p>
+                  <div class="benefits__hover-img">
+                    <img src="img/benefits-6.jpg" width="360" height="240" alt="" />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="general section">
+        <div class="container">
+          <div class="general__inner">
+            <div class="general__info">
+              <h2 class="general__title title">Результат нашей работы</h2>
+              <div class="general__content">
+                <div class="general__text">
+                  <p>Краткое описание Краткое описание Краткое описание Краткое описание Краткое описание Краткое описание
+                    Краткое описание Краткое описание Краткое описание Краткое описание Краткое описание Краткое описание </p>
+                </div>
+              </div>
+            </div>
+            <a class="general__media" tabindex="0" role="button" title="Открыть видео" href="https://www.youtube.com/watch?v=N-vLYY9dsIk" data-fslightbox="general">
+              <img src="img/general.jpg" width="528" height="296" alt="Постер видео" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="reviews section">
+        <div class="container">
+          <div class="reviews__inner">
+            <header class="reviews__header">
+              <h3 class="reviews__title title">Отзывы покупателей</h3>
+              <a class="reviews__link" href="/reviews.html">Смотреть все</a>
+            </header>
+            <div class="reviews__slider splide" role="group">
+              <div class="reviews__slider-inner">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <article class="reviews-card">
+                        <header class="reviews-card__header">
+                          <div class="reviews-card__info">
+                            <p class="reviews-card__title subtitle">Фамилия Имя</p>
+                            <time class="reviews-card__date" datetime="2023-05-25">25.05.2023</time>
+                          </div>
+                          <p class="reviews-card__rating">5.0</p>
+                        </header>
+                        <div class="reviews-card__text">
+                          <p>Содержание Отзыв отзыва Содержание отзыва Содержание отзыва Отзыв Отзыв Содержание отзыва
+                            Содержание Отзыв отзыва Содержание отзыва Содержание </p>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="splide__slide">
+                      <article class="reviews-card">
+                        <header class="reviews-card__header">
+                          <div class="reviews-card__info">
+                            <p class="reviews-card__title subtitle">Фамилия Имя</p>
+                            <time class="reviews-card__date" datetime="2023-05-25">25.05.2023</time>
+                          </div>
+                          <p class="reviews-card__rating">5.0</p>
+                        </header>
+                        <div class="reviews-card__text">
+                          <p>Содержание Отзыв отзыва Содержание отзыва Содержание отзыва Отзыв Отзыв Содержание отзыва
+                            Содержание Отзыв отзыва Содержание отзыва Содержание </p>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="splide__slide">
+                      <article class="reviews-card">
+                        <header class="reviews-card__header">
+                          <div class="reviews-card__info">
+                            <p class="reviews-card__title subtitle">Фамилия Имя</p>
+                            <time class="reviews-card__date" datetime="2023-05-25">25.05.2023</time>
+                          </div>
+                          <p class="reviews-card__rating">5.0</p>
+                        </header>
+                        <div class="reviews-card__text">
+                          <p>Содержание Отзыв отзыва Содержание отзыва Содержание отзыва Отзыв Отзыв Содержание отзыва
+                            Содержание Отзыв отзыва Содержание отзыва Содержание </p>
+                        </div>
+                      </article>
+                    </li>
+                    <li class="splide__slide">
+                      <article class="reviews-card">
+                        <header class="reviews-card__header">
+                          <div class="reviews-card__info">
+                            <h4 class="reviews-card__title subtitle">Фамилия</h4>
+                            <time class="reviews-card__date" datetime="2023-05-25">25.05.2023</time>
+                          </div>
+                          <p class="reviews-card__rating">5.0</p>
+                        </header>
+                        <div class="reviews-card__text">
+                          <p>Содержание Отзыв отзыва Содержание отзыва Содержание отзыва Отзыв Отзыв Содержание отзыва
+                            Содержание Отзыв отзыва Содержание отзыва Содержание </p>
+                        </div>
+                      </article>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                  <svg width="11" height="46" viewBox="0 0 11 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 44L3 23L9 2" stroke="#FFE661" stroke-width="4" stroke-linecap="round" />
+                  </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                  <svg width="11" height="46" viewBox="0 0 11 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 2L8 23L2 44" stroke="#FFE661" stroke-width="4" stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__form">
+            <p class="footer__form-title">Подпишитесь на уведомления</p>
+            <form>
+              <div class="footer__form-inner">
+                <div class="footer__input-wrapper">
+                  <input class="footer__input" type="email" placeholder="Введите email" />
+                </div>
+                <button class="footer__btn btn-primary btn-primary--sm">Подписаться</button>
+              </div>
+            </form>
+          </div>
+          <div class="footer__body">
+            <div class="footer__info">
+              <a class="footer__logo" href="/">
+                <img src="img/logo-white.svg" width="206" height="33" alt="Логотип Згадай мене" />
+              </a>
+              <div class="footer__text">
+                <p>Описание</p>
+              </div>
+            </div>
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li><a href="/product.html">Магазин</a></li>
+                <li><a href="/login.html">Кабинет</a></li>
+                <li><a href="/about.html">О нас</a></li>
+                <li><a href="/news.html">Новости</a></li>
+                <li><a href="/contacts.html">Контакты</a></li>
+                <li><a href="/policy.html">Политика конфиденциальности</a></li>
+                <li><a href="/policy.html">Пользовательское соглашение</a></li>
+                <li><a href="/policy.html">Условия предоставления услуг</a></li>
+                <li><a href="/policy.html">Доставка и возврат</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__bottom">
+            <ul class="footer__payments">
+              <li><img src="img/visa.svg" width="64" height="40" alt="Visa" /></li>
+              <li><img src="img/mastercard.svg" width="64" height="40" alt="Mastercard" /></li>
+            </ul>
+            <ul class="footer__socials">
+              <li><a href="#" title="Связаться в Facebook" style="background-image: url('img/fb-icon.svg');"></a></li>
+              <li><a href="#" title="Связаться в Instagram" style="background-image: url('img/insta-icon.svg');"></a></li>
+              <li><a href="#" title="Связаться в Telegram" style="background-image: url('img/tg-icon.svg');"></a></li>
+              <li><a href="#" title="Связаться в Whatsapp" style="background-image: url('img/whatsapp-icon.svg');"></a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer__caption">Згадай мене 2024 © Все права защищены</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="modal modal-main" id="modal-1" aria-hidden="true">
+    <div class="modal__wrapper">
+      <div class="modal__inner">
+        <div class="modal__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum corrupti, officia omnis vitae quae quidem nostrum
+          aliquid voluptas consectetur laudantium, qui excepturi recusandae dolorem doloribus aperiam ratione eius numquam
+          debitis.
+        </div>
+        <button class="modal__close btn-close" data-modal-close></button>
+      </div>
+    </div>
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/splide.min.js"></script>
+  <script src="js/fslightbox.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+.seo {
+  &__title {
+    margin-bottom: 38px;
+  }
+
+  &__text {
+    font-size: 28px;
+
+    &.is-active {
+      .seo__more-wrapper {
+        display: none;
+      }
+
+      .seo__text-hidden {
+        display: inline;
+      }
+    }
+  }
+
+  &__text-hidden {
+    display: none;
+  }
+
+  &__btn {
+    border-bottom: 1px solid transparent;
+    font-weight: 600;
+    color: $carbon;
+    transition: border-bottom $transition;
+
+    @include hover {
+      border-bottom-color: $carbon;
+    }
+  }
+}

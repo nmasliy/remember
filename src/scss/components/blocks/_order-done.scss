@@ -1,0 +1,182 @@
+.order-done {
+  position: relative;
+  padding: 20px 0;
+
+  &__main {
+    padding: 100px 0;
+    height: calc(var(--window-height) - var(--header-height));
+    animation: hide-main 0.7s forwards linear;
+    animation-delay: 4.2s;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 124px;
+    color: $carbon;
+    transform-origin: left;
+
+    &--start {
+      animation: hide-main-title 0.7s forwards linear;
+      animation-delay: 0.8s;
+    }
+
+    &--end {
+      opacity: 0;
+      transform: translateX(-100px);
+      animation: show-finish-title 0.7s forwards linear;
+      animation-delay: 4.2s;
+    }
+  }
+
+  &__box {
+    position: relative;
+    z-index: 2;
+    margin-right: 80px;
+    animation: drive 2.6s forwards linear;
+    animation-delay: 2.3s;
+
+    > img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      animation: box-scale 1.8s forwards linear;
+      animation-delay: 1s;
+    }
+  }
+
+  &__truck {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(350px);
+    animation: truck-scale 0.7s forwards linear;
+    animation-delay: 1.7s;
+
+    > img {
+      opacity: 0;
+      animation: truck-show 0.7s forwards linear;
+      animation-delay: 1s;
+    }
+  }
+
+  &__line {
+    left: -50%;
+    top: 0;
+    width: 8000px;
+    height: 13px;
+    background-repeat: repeat-x;
+    opacity: 0;
+    transform: translateX(-50%);
+    animation: line 2s forwards linear;
+    animation-delay: 2s;
+  }
+
+  &__finish {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--window-height) - var(--header-height));
+    text-align: center;
+    opacity: 0;
+    animation: show-finish 0.7s forwards linear;
+    animation-delay: 4.2s;
+    inset: 0;
+  }
+
+  &__btn {
+    margin-top: 180px;
+  }
+}
+
+@keyframes show-finish-title {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes show-finish {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-main {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes drive {
+  30% {
+    transform: translateX(-350px);
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(55vw);
+  }
+}
+
+@keyframes line {
+  30% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(calc(-50% - 300px));
+  }
+}
+
+@keyframes hide-main-title {
+  100% {
+    opacity: 0;
+    transform: scale(0.6) translateX(-200px);
+  }
+}
+
+@keyframes box-scale {
+  20% {
+    transform: scale(1.3);
+  }
+
+  80% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: translate(277px, -15px) scale(0.67);
+  }
+}
+
+@keyframes truck-show {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes truck-scale {
+  100% {
+    transform: translateX(350px) scale(1.9);
+  }
+}

@@ -1,0 +1,56 @@
+.header-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 8;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#251e1e, 0.5);
+  opacity: 0;
+  transition: $menu-transition;
+
+  &.is-active {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: $menu-breakpoint) {
+  .menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 40;
+    display: none;
+    width: 100%;
+    height: 100%;
+    max-width: 280px;
+    background-color: $white;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform $menu-transition, opacity $menu-transition;
+
+    &__socials {
+      ul {
+        @include flex-center;
+      }
+    }
+
+    &__close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 13;
+      display: block;
+      border: none;
+      background: transparent;
+    }
+
+    &.is-active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

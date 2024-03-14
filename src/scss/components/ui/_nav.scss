@@ -1,0 +1,18 @@
+.nav {
+  ul {
+    display: flex;
+  }
+
+  li {
+    @include mr(24px);
+  }
+
+  a {
+    display: inline-block;
+    transition: color $transition;
+
+    @include hover {
+      color: $accent;
+    }
+  }
+}

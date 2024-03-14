@@ -1,0 +1,71 @@
+.btn-primary {
+  display: inline-block;
+  border-radius: 16px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: normal;
+  text-align: center;
+  color: $carbon;
+  background: $yellow;
+  transition: $transition;
+
+  &:focus,
+  &:active {
+    background-color: #d6c150;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &--sm {
+    padding: 16px;
+    font-size: 20px;
+  }
+
+  @include hover {
+    background-color: #d6c150;
+  }
+}
+
+.btn-close {
+  display: block;
+  outline: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  box-shadow: none;
+  color: rgba($black, 0.3);
+  background: 0;
+  transition: $transition;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2px;
+    height: 20px;
+    background-color: currentcolor;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  @include hover {
+    color: $yellow;
+    transform: rotate(90deg);
+  }
+}

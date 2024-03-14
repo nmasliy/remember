@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/libs.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="decor-2">
+  <div class="page-wrapper">
+
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <a class="header__logo" href="/">
+            <img src="img/logo.svg" width="218" height="144" alt="Логотип Згадай мене" />
+          </a>
+          <div class="header__menu menu">
+            <nav class="header__nav nav">
+              <ul class="header__list">
+                <li class="is-active">
+                  <a href="/">Главная</a>
+                </li>
+                <li>
+                  <a href="/product.html">Магазин</a>
+                </li>
+                <li>
+                  <a href="/login.html">Кабинет</a>
+                </li>
+                <li>
+                  <a href="/about.html">О нас</a>
+                </li>
+                <li>
+                  <a href="/news.html">Новости</a>
+                </li>
+                <li>
+                  <a href="/contacts.html">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <a class="header__cart" href="/cart.html"></a>
+          <button class="header__burger burger">
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="header-overlay"></div>
+    </header>
+
+    <main class="main">
+
+      <section class="order-done">
+        <div class="container">
+          <div class="order-done__inner">
+            <div class="order-done__main">
+              <div class="order-done__top">
+                <div class="order-done__box">
+                  <img src="img/order-animation-box.svg" width="187" height="186" alt="ваш заказ" />
+                  <div class="order-done__truck">
+                    <img src="img/order-animation-truck.svg" width="186" height="186" alt="ваш заказ" />
+                  </div>
+                </div>
+                <h1 class="order-done__title order-done__title--start">Ваш заказ</h1>
+              </div>
+
+              <div class="order-done__line" style="background-image: url('img/order-animation-line.svg');"></div>
+            </div>
+            <div class="order-done__finish">
+              <h2 class="order-done__title order-done__title--end">Заказ оформлен</h2>
+              <a class="order-done__btn btn-primary" href="/login.html">Посмотреть в кабинете</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__form">
+            <p class="footer__form-title">Подпишитесь на уведомления</p>
+            <form>
+              <div class="footer__form-inner">
+                <div class="footer__input-wrapper">
+                  <input class="footer__input" type="email" placeholder="Введите email" />
+                </div>
+                <button class="footer__btn btn-primary btn-primary--sm">Подписаться</button>
+              </div>
+            </form>
+          </div>
+          <div class="footer__body">
+            <div class="footer__info">
+              <a class="footer__logo" href="/">
+                <img src="img/logo-white.svg" width="206" height="33" alt="Логотип Згадай мене" />
+              </a>
+              <div class="footer__text">
+                <p>Описание</p>
+              </div>
+            </div>
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li><a href="/product.html">Магазин</a></li>
+                <li><a href="/login.html">Кабинет</a></li>
+                <li><a href="/about.html">О нас</a></li>
+                <li><a href="/news.html">Новости</a></li>
+                <li><a href="/contacts.html">Контакты</a></li>
+                <li><a href="/policy.html">Политика конфиденциальности</a></li>
+                <li><a href="/policy.html">Пользовательское соглашение</a></li>
+                <li><a href="/policy.html">Условия предоставления услуг</a></li>
+                <li><a href="/policy.html">Доставка и возврат</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__bottom">
+            <ul class="footer__payments">
+              <li><img src="img/visa.svg" width="64" height="40" alt="Visa" /></li>
+              <li><img src="img/mastercard.svg" width="64" height="40" alt="Mastercard" /></li>
+            </ul>
+            <ul class="footer__socials">
+              <li><a href="#" title="Связаться в Facebook" style="background-image: url('img/fb-icon.svg');"></a></li>
+              <li><a href="#" title="Связаться в Instagram" style="background-image: url('img/insta-icon.svg');"></a></li>
+              <li><a href="#" title="Связаться в Telegram" style="background-image: url('img/tg-icon.svg');"></a></li>
+              <li><a href="#" title="Связаться в Whatsapp" style="background-image: url('img/whatsapp-icon.svg');"></a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer__caption">Згадай мене 2024 © Все права защищены</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="modal modal-main" id="modal-1" aria-hidden="true">
+    <div class="modal__wrapper">
+      <div class="modal__inner">
+        <div class="modal__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum corrupti, officia omnis vitae quae quidem nostrum
+          aliquid voluptas consectetur laudantium, qui excepturi recusandae dolorem doloribus aperiam ratione eius numquam
+          debitis.
+        </div>
+        <button class="modal__close btn-close" data-modal-close></button>
+      </div>
+    </div>
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/splide.min.js"></script>
+  <script src="js/fslightbox.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

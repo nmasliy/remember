@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"diz.ecsstractor-port",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"stylelint.vscode-stylelint",
+		"ginfuru.better-nunjucks",
+		"mrmlnc.vscode-scss",
+	]
+}

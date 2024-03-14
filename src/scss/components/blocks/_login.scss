@@ -1,0 +1,80 @@
+.login {
+  padding-top: 0;
+  padding-bottom: 120px;
+
+  &__inner {
+    @include grid(2, 0);
+
+    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    border-radius: 28px;
+    background-color: $background;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    margin-bottom: 44px;
+    font-size: 28px;
+    color: $carbon;
+  }
+
+  &__form {
+    display: none;
+    padding: 40px 48px 40px 40px;
+    opacity: 0;
+
+    &.is-active {
+      display: block;
+    }
+  }
+
+  &__form-inner {
+  }
+
+  &__subtitle {
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #000;
+  }
+
+  &__item {
+    @include mb(20px);
+  }
+
+  &__img {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__items {
+    margin-bottom: 10px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+
+  &__error {
+    margin-bottom: 24px;
+  }
+
+  &__link {
+    color: $carbon;
+    transition: color $transition;
+
+    @include hover {
+      color: $blue;
+    }
+  }
+
+  &__btn {
+    @include mb(24px);
+  }
+}

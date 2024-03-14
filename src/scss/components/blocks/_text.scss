@@ -1,0 +1,31 @@
+.text {
+  padding-top: 0;
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    font-size: 28px;
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    ol {
+      list-style: decimal;
+      padding-left: 20px;
+    }
+
+    img,
+    ul,
+    ol {
+      @include mb(20px);
+    }
+
+    p {
+      @include mb(25px);
+    }
+  }
+}

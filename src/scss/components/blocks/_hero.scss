@@ -1,0 +1,86 @@
+.hero {
+  padding-top: 24px;
+
+  &__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 687fr 430fr;
+    overflow: hidden;
+    border-radius: 28px;
+    padding: 40px 60px;
+    background: $substrate;
+    gap: 30px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -270px;
+      top: 50%;
+      width: 602px;
+      height: 853px;
+      background: url("../img/hero-decor.svg") center / cover no-repeat;
+      transform: translateY(-50%);
+      transition: transform 0.6s;
+    }
+
+    @include hover {
+      &::after {
+        transform: translateY(-50%) scale(1.04);
+      }
+
+      .hero__img img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 34px;
+    font-weight: 700;
+    font-size: 60px;
+    color: $carbon;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    max-width: 460px;
+    font-size: 28px;
+
+    p {
+      @include mb(15px);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    margin-right: 20px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 28px;
+    transition: color $transition;
+
+    @include hover {
+      color: $blue;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: 1;
+
+    img {
+      transition: transform 0.4s;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.steps {
+  &__title {
+    margin-bottom: 44px;
+  }
+
+  &__list {
+    @include grid(3, 20px);
+  }
+
+  &__item {
+    --icon-background: #ffe661;
+    --padding: 32px;
+    --background: #f9f9f9;
+
+    border-radius: 28px;
+    padding: var(--padding);
+    background-color: var(--background);
+  }
+
+  &__item--yellow {
+    --icon-background: #333;
+    --background: #ffe661;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      width: 31px;
+      height: 25px;
+      background: url("data:image/svg+xml,%3Csvg width='31' height='25' viewBox='0 0 31 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='4' r='2.5' stroke='%23333333'/%3E%3Ccircle cx='24' cy='20' r='2.5' stroke='%23333333'/%3E%3Ccircle cx='3' cy='22' r='2.5' stroke='%23333333'/%3E%3Cpath d='M25.5 2L30 5M26 5L30 1' stroke='%23333333'/%3E%3Cpath d='M8 4C12.6667 4.66667 22.4 8.8 24 20' stroke='%23333333'/%3E%3C/svg%3E%0A") center / cover no-repeat;
+      transition: transform 0.4s, opacity 0.4s;
+    }
+  }
+
+  &__item--lg {
+    --padding: 40px;
+
+    display: grid;
+    align-items: center;
+    grid-column: span 3;
+    grid-template-columns: 560fr 490fr;
+    gap: 33px;
+  }
+
+  &__icon {
+    margin-bottom: 26px;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    background-position: center;
+    background-size: 26px;
+    background-repeat: no-repeat;
+    background-color: var(--icon-background);
+  }
+
+  &__name {
+    margin-bottom: 12px;
+  }
+
+  &__img {
+    margin-right: -20px;
+    margin-bottom: -40px;
+  }
+}
