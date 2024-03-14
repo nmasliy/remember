@@ -74,44 +74,44 @@ const styles = () => {
 
 const scripts = () => {
   return src(paths.mainJs)
-    .pipe(
-      plumber(
-        notify.onError({
-          title: 'JS',
-          message: 'Error: <%= error.message %>',
-        })
-      )
-    )
-    .pipe(gulpif(
-      isMinified,
-      webpackStream({
-        mode: 'production',
-        output: {
-          filename: 'main.js',
-        },
-        module: {
-          rules: [
-            {
-              test: /\.m?js$/,
-              exclude: /node_modules/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: [
-                    [
-                      '@babel/preset-env',
-                      {
-                        targets: 'defaults',
-                      },
-                    ],
-                  ],
-                },
-              },
-            },
-          ],
-        },
-      })
-    ))
+    // .pipe(
+    //   plumber(
+    //     notify.onError({
+    //       title: 'JS',
+    //       message: 'Error: <%= error.message %>',
+    //     })
+    //   )
+    // )
+    // .pipe(gulpif(
+    //   isMinified,
+    //   webpackStream({
+    //     mode: 'production',
+    //     output: {
+    //       filename: 'main.js',
+    //     },
+    //     module: {
+    //       rules: [
+    //         {
+    //           test: /\.m?js$/,
+    //           exclude: /node_modules/,
+    //           use: {
+    //             loader: 'babel-loader',
+    //             options: {
+    //               presets: [
+    //                 [
+    //                   '@babel/preset-env',
+    //                   {
+    //                     targets: 'defaults',
+    //                   },
+    //                 ],
+    //               ],
+    //             },
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   })
+    // ))
     .on('error', function (err) {
       console.error('WEBPACK ERROR', err);
       this.emit('end');
