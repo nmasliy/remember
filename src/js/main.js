@@ -42,6 +42,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	initProductCounter();
 	initRadioTabs();
 	initTogglePassword();
+	initScrollbars();
+	initFileInput('.contacts__file');
+
+	function initFileInput(selector) {
+		const parent = document.querySelector(selector);
+		
+			if (!parent) return;
+
+			const fileInput = parent.querySelector('input');
+			const fileSpan = parent.querySelector('span');
+
+			fileInput.addEventListener('change', function() {
+				const fileName = this.files[0].name;
+				fileSpan.textContent = fileName;
+			});
+	}
+	
+	function initScrollbars() {
+		const items = document.querySelectorAll('.overlay-scrollbar');
+
+		items.forEach(item => {
+			const osInstance = OverlayScrollbars(item, {});
+		})
+	}
 
 	// Show more block
 	function initSeoMore() {

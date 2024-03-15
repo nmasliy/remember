@@ -494,13 +494,10 @@ function initTabs(triggerSelector, contentSelector, isPrevent = true, duration =
       hide(activeParent).then(() => {
         activeParent.classList.remove('is-active');
         newActiveParent.classList.add('is-active');
-        console.log('спрятали')
 
         setTimeout(() => {
-        console.log('начали показывать')
         
         show(newActiveParent).then(() => {
-            console.log('показали')
             isAnimated = false;
           });
         }, 10);
