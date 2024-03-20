@@ -1,0 +1,120 @@
+.services {
+  &__inner {
+  }
+
+  &__list {
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    @include mb(44px);
+
+    display: grid;
+    grid-template-columns: 174fr 627fr;
+    gap: 20px;
+  }
+
+  &__img {
+    @include flex-center;
+
+    border-radius: 22px;
+    min-height: 174px;
+    background: #fff8d2;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: $carbon;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
+  &__name {
+    margin-right: 12px;
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    margin-top: auto;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__history {
+    color: $carbon;
+
+    table {
+      border-collapse: separate;
+      width: 100%;
+    }
+
+    thead {
+      color: $midnight;
+
+      tr th {
+        &:first-child {
+          border-top-left-radius: 16px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 16px;
+        }
+      }
+    }
+
+    tbody {
+      tr:last-child td {
+        &:first-child {
+          border-bottom-left-radius: 16px;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 16px;
+        }
+      }
+    }
+
+    th,
+    td {
+      vertical-align: middle;
+      padding: 4px 13px;
+      height: 56px;
+      box-shadow: 0 0 0 1px  #e5e5e5;
+      text-align: left;
+      background-color: $substrate;
+
+      &:nth-child(1) {
+        width: 226px;
+      }
+
+      &:nth-child(2) {
+        width: 245px;
+      }
+
+      &:nth-child(3) {
+        width: 190px;
+      }
+
+      &:nth-child(4) {
+        width: 160px;
+      }
+    }
+  }
+}

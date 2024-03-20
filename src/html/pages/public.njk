@@ -1,0 +1,33 @@
+{% extends "../templates/layouts/layout-public.njk" %}
+
+{% block head %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/libs.css">
+  <link rel="stylesheet" href="css/splide-extension-video.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+{% endblock head %}
+
+{% block content %}
+{% include "../blocks/profile/public.njk" %}
+{% endblock content %}
+{% block extraScripts %}
+<script src="js/splide-extension-video.js"></script>
+<script src="js/lottie.min.js"></script>
+<script>
+  // Используем функцию loadAnimation из библиотеки Lottie Web
+  lottie.loadAnimation({
+    container: document.querySelector('.public__candle-animation'), // Контейнер, в который будет вставлена анимация
+    renderer: 'svg',
+    loop: true, // Устанавливаем циклическое воспроизведение
+    autoplay: true, // Автоматически воспроизводить анимацию
+    path: './lottie/candle.json' // Ссылка на вашу Lottie анимацию
+  });
+</script>
+{% endblock extraScripts %}

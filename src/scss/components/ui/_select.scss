@@ -1,0 +1,70 @@
+.nice-select {
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 0 32px 0 16px;
+  height: 48px;
+  min-width: 185px;
+  font: inherit;
+  font-size: 20px;
+  line-height: 48px;
+  color: $carbon;
+  background-color: $substrate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    width: 16px;
+    height: 8px;
+    background: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' d='M1 1L8 6L15 1' stroke='%23333333' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A") center / cover no-repeat;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+.nice-select:active,
+.nice-select.open,
+.nice-select:focus {
+  border-color: #e5e5e5;
+}
+
+.nice-select.open {
+  border-bottom: transparent;
+  border-radius: 16px 16px 0 0;
+}
+
+.nice-select .list {
+  border-radius: 0 0 16px 16px;
+}
+
+.nice-select .nice-select-dropdown {
+  left: -1px;
+  margin-top: -3px;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  width: calc(100% + 2px);
+  box-shadow: none;
+  background-color: $substrate;
+
+  li {
+    border-top: 1px solid #e5e5e5;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 20px;
+    background-color: $substrate;
+
+    &:first-child {
+      border-top: none;
+      opacity: 0.5;
+    }
+
+    &:last-child {
+      border-radius: 0 0 16px 16px;
+    }
+  }
+}

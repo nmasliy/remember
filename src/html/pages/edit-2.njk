@@ -1,0 +1,46 @@
+{% extends "../templates/layouts/layout-profile-no-decor.njk" %}
+
+{% block head %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/air-datepicker.css">
+  <link rel="stylesheet" href="css/quill.css">
+  <link rel="stylesheet" href="css/libs.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+{% endblock head %}
+
+{% block aside %}
+<aside class="profile-page__aside sidebar">
+  <ul class="sidebar__list">
+    <li>
+      <a href="./profile.html">Профиль</a>
+    </li>
+    <li class="is-active">
+      <a href="./qr.html">Мои QR - Коды</a>
+    </li>
+    <li>
+      <a href="./services.html">Доп. услуги</a>
+    </li>
+    <li>
+      <a href="./responses.html">Отклики</a>
+    </li>
+    <li>
+      <a href="./notifications.html">Уведомления</a>
+    </li>
+  </ul>
+</aside>
+{% endblock aside %}
+{% block content %}
+{% include "../blocks/profile/edit-2.njk" %}
+{% endblock content %}
+{% block extraScripts %}
+<script src="js/air-datepicker.js"></script>
+<script src="js/quill.js"></script>
+<script src="js/profile-edit.js"></script>
+{% endblock extraScripts %}

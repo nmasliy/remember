@@ -166,19 +166,710 @@
     </footer>
 
   </div>
-
-  <div class="modal modal-main" id="modal-1" aria-hidden="true">
+  <div class="modal modal-profile" id="modal-change-password" aria-hidden="true">
     <div class="modal__wrapper">
       <div class="modal__inner">
         <div class="modal__content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum corrupti, officia omnis vitae quae quidem nostrum
-          aliquid voluptas consectetur laudantium, qui excepturi recusandae dolorem doloribus aperiam ratione eius numquam
-          debitis.
+          <p class="modal-profile__title subtitle">Изменение пароля</p>
+          <div class="modal-profile__form">
+            <form>
+              <div class="modal-profile__form-inner">
+                <div class="modal-profile__items">
+                  <div class="modal-profile__item form-password">
+                    <input class="login__input form-control" type="password" placeholder="Старый пароль" />
+                    <button class="form-password__btn" type="button" title="Показать/скрыть пароль"></button>
+                  </div>
+                  <div class="modal-profile__item form-password">
+                    <input class="login__input form-control" type="password" placeholder="Новый пароль" />
+                    <button class="form-password__btn" type="button" title="Показать/скрыть пароль"></button>
+                  </div>
+                  <div class="modal-profile__item form-password">
+                    <input class="login__input form-control" type="password" placeholder="Повторите новый пароль" />
+                    <button class="form-password__btn" type="button" title="Показать/скрыть пароль"></button>
+                  </div>
+                </div>
+                <!-- Если есть ошибка добавляем к полям класс is-invalid и выводим сообщение -->
+                <!-- <div class="modal-profile__error form-error">Пароли не совпадают</div> -->
+                <div class="modal-profile__btn-wrapper">
+                  <button class="modal-profile__btn btn-primary btn-primary--sm" data-modal-close>Сохранить</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
         <button class="modal__close btn-close" data-modal-close></button>
       </div>
     </div>
   </div>
+
+  <div class="modal modal-save" id="modal-save" aria-hidden="true">
+    <div class="modal__wrapper">
+      <div class="modal__inner modal-save__inner">
+        <div class="modal__content">
+          <p class="modal-save__title subtitle">На странице внесены изменения, хотите сохранить измененные данные?</p>
+          <div class="modal-save__buttons">
+            <button class="modal-save__btn btn-transparent btn-transparent--sm" data-modal-close>Отменить</button>
+            <button class="modal-save__btn btn-primary btn-primary--sm" data-modal-close>Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-add-review" id="modal-add-review" aria-hidden="true">
+    <div class="modal__wrapper">
+      <div class="modal__inner modal-add-review__inner">
+        <div class="modal__content">
+          <p class="modal-add-review__title subtitle">Оставьте отзыв</p>
+          <div class="modal-add-review__form">
+            <form>
+              <div class="modal-add-review__form-inner">
+                <div class="modal-add-review__items">
+                  <div class="modal-add-review__item">
+                    <input class="modal-add-review__input form-control" type="text" placeholder="Иванов Иван Иванович" />
+                  </div>
+                  <div class="modal-add-review__item">
+                    <textarea class="modal-add-review__textarea form-control overlay-scrollbar" rows="7" placeholder="Напишите отзыв тут"></textarea>
+                  </div>
+                </div>
+                <!-- <div class="modal-add-review__error form-error">Ошибка</div> -->
+              </div>
+            </form>
+          </div>
+          <div class="modal-add-review__btn-wrapper">
+            <button class="modal-add-review__btn btn-primary btn-primary--sm" data-modal-close>Отправить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-review" id="modal-review" aria-hidden="true">
+    <div class="modal__wrapper">
+      <div class="modal__inner modal-review__inner">
+        <div class="modal__content">
+          <p class="modal-review__title subtitle">Ваш отзыв</p>
+          <div class="modal-review__text">
+            <p>Содержание Отзыв отзыва Содержание отзыва Содержание отзыва Отзыв Отзыв Содержание отзыва Содержание Отзыв
+              отзыва Содержание отзыва Содержание </p>
+          </div>
+          <div class="modal-review__btn-wrapper">
+            <button class="modal-review__btn btn-primary btn-primary--sm" data-modal-close>Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-album" id="modal-add-album" aria-hidden="true">
+    <div class="modal__wrapper">
+      <div class="modal__inner modal-album__inner">
+        <div class="modal__content">
+          <p class="modal-album__title subtitle">Создание альбома</p>
+          <div class="modal-album__name">
+            <input class="modal-album__input form-control" type="text" placeholder="Медиа в альбоме" />
+          </div>
+          <div class="modal-album__form">
+            <form action="#">
+              <div class="modal-album__page is-active" data-page="1">
+                <p class="modal-album__subtitle subtitle">Медиа в альбоме</p>
+                <p class="modal-album__caption">Выберите медиа, которые хотите добавить в альбом</p>
+                <div class="modal-album__body overlay-scrollbar">
+                  <ul class="modal-album__items modal-album__items--uploaded">
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media media-card__media--video">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media media-card__media--video">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media media-card__media--video">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media media-card__media--video">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media media-card__media--video">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media media-card__media--video">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media media-card__media--video">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__checked"></div>
+
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-album__footer">
+                  <button class="modal-album__btn btn-primary btn-primary--sm" type="button" data-page-to="2">Продолжить</button>
+                </div>
+              </div>
+              <div class="modal-album__page" data-page="2">
+                <p class="modal-album__subtitle subtitle">Основное фото</p>
+                <p class="modal-album__caption">Виберите основное фото альбома</p>
+                <div class="modal-album__body overlay-scrollbar">
+                  <ul class="modal-album__items modal-album__items--preview one-active">
+                    <li class="modal-album__item media-card is-active">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-album__footer">
+                  <button class="modal-album__btn modal-album__submit btn-primary btn-primary--sm" data-modal-close>Создать
+                    альбом</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <button class="modal__close btn-close" data-modal-close></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-edit-album modal-album" id="modal-edit-album" aria-hidden="true" data-album="0">
+    <div class="modal__wrapper">
+      <div class="modal__inner modal-album__inner">
+        <div class="modal__content">
+          <p class="modal-album__title subtitle">Редактирование альбома</p>
+          <div class="modal-album__name">
+            <input class="modal-album__input form-control" type="text" value="Первый альбом" />
+          </div>
+          <div class="modal-album__form">
+            <form action="#">
+              <div class="modal-album__page is-active" data-page="1">
+                <div class="modal-album__new">
+                  <div class="modal-album__header">
+                    <p class="modal-album__subtitle subtitle">Новые медиа</p>
+                    <button class="modal-album__save btn-outline btn-outline--xs" type="button">
+                      <input class="visually-hidden" type="file" />
+                      <i class="edit-media__icon media-icon"></i>
+                      Сохранить
+                    </button>
+                  </div>
+                  <div class="modal-album__body overlay-scrollbar">
+                    <ul class="modal-album__items modal-album__items--uploaded">
+                    </ul>
+                  </div>
+                </div>
+                <div class="modal-album__main">
+                  <div class="modal-album__header">
+                    <p class="modal-album__subtitle subtitle">Медиа в альбоме</p>
+                    <label class="modal-album__add btn-outline btn-outline--xs">
+                      <input class="visually-hidden" type="file" />
+                      <i class="edit-media__icon media-icon"></i>
+                      Добавить
+                    </label>
+                  </div>
+                  <div class="modal-album__body overlay-scrollbar">
+                    <ul class="modal-album__items modal-album__items--album one-active">
+                      <li class="modal-album__item media-card is-active">
+                        <div class="media-card__media">
+                          <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-3.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-1.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                      <li class="modal-album__item media-card">
+                        <div class="media-card__media">
+                          <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                        </div>
+                        <div class="media-card__remove"></div>
+                        <div class="media-card__footer">
+                          <button class="media-card__footer-btn media-card__choose media-card__choose--sm" type="button" data-choosed-text="Основное" data-text="Сделать основным"></button>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="modal-album__footer">
+                  <button class="modal-album__btn modal-album__remove btn-danger btn-danger--sm" data-modal-close> <i
+                    class="trash-danger-icon"></i> Удалить альбом</button>
+                  <button class="modal-album__btn btn-primary btn-primary--sm" data-modal-close>Сохранить
+                    изменения</button>
+                </div>
+              </div>
+              <div class="modal-album__page" data-page="2">
+                <p class="modal-album__subtitle subtitle">Основное фото</p>
+                <p class="modal-album__caption">Виберите основное фото альбома</p>
+                <div class="modal-album__body overlay-scrollbar">
+                  <ul class="modal-album__items one-active">
+                    <li class="modal-album__item media-card">
+                      <div class="media-card__media">
+                        <img src="img/media-2.jpg" width="148" height="148" alt="" />
+                      </div>
+                      <div class="media-card__footer">
+                        <button class="media-card__footer-btn media-card__choose" type="button" data-choosed-text="Выбрано" data-text="Выбрать"></button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal-album__footer">
+                  <button class="modal-album__btn modal-album__submit btn-primary btn-primary--sm" data-modal-close>Создать
+                    альбом</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <button class="modal__close btn-close" data-modal-close></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-response-delete" id="modal-response-delete" aria-hidden="true">
+    <div class="modal__wrapper">
+      <div class="modal__inner modal-response-delete__inner">
+        <div class="modal__content">
+          <p class="modal-response-delete__title subtitle">Подтвердите удаление отклика</p>
+
+          <div class="modal-response-delete__buttons">
+            <button class="modal-response-delete__btn btn-primary btn-primary--sm" data-modal-close>Отменить</button>
+            <button class="modal-response-delete__btn btn-secondary btn-secondary--sm" data-modal-close>Подтвердить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/vendor.js"></script>
   <script src="js/splide.min.js"></script>
   <script src="js/overlayScrollbars.js"></script>

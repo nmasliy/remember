@@ -1,0 +1,153 @@
+<section class="edit">
+  <div class="edit__inner">
+    <ul class="edit__stats">
+      <li class="edit__stats-item">
+        <p class="edit__stats-title">Просмотры</p>
+        <p class="edit__stats-value">12.346</p>
+      </li>
+      <li class="edit__stats-item">
+        <p class="edit__stats-title">Зажженные свечи</p>
+        <p class="edit__stats-value">12.346</p>
+      </li>
+      <li class="edit__stats-item">
+        <p class="edit__stats-title">Зажженные свечи</p>
+        <p class="edit__stats-value">153</p>
+      </li>
+    </ul>
+    <p class="edit__link-wrapper">
+      <span>Ссылка на страницу: </span>
+      <a class="edit__link" target="_blank" href="https://zgadaymene.com/123456">https://zgadaymene.com/123456</a>
+      <button class="edit__copy" title="Копировать ссылку">
+        <span class="edit__copied">Ссылка скопирована!</span>
+      </button>
+    </p>
+    <button class="edit__btn btn-primary btn-primary--xs" data-modal="modal-add-review">Оставить отзыв</button>
+    <div class="edit__main">
+      <div class="edit__tabs-wrapper">
+        <div class="edit__tabs">
+          <button class="edit__tab is-active" data-tabs="1" type="button">Личные данные</button>
+          <button class="edit__tab" data-tabs="2" type="button">Медиа контент</button>
+        </div>
+      </div>
+      <div class="edit__content">
+        <div class="edit__content-item is-active" data-tabs="1">
+          <form action="#">
+            <div class="edit__box">
+              <p class="edit__title subtitle">Тип сайта</p>
+              <div class="edit__radios">
+                <label class="edit__radio form-radio">
+                  <input type="radio" name="access__type" value="1" checked />
+                  <span class="form-radio__element"></span>
+                  <span class="form-radio__text">Открытый доступ</span>
+                </label>
+                <label class="edit__radio form-radio">
+                  <input type="radio" name="access__type" value="2" />
+                  <span class="form-radio__element"></span>
+                  <span class="form-radio__text">Закрытый доступ</span>
+                </label>
+              </div>
+            </div>
+            <div class="edit__box">
+              <div class="edit__images">
+                <div class="edit__images-item edit-img edit-img--photo">
+                  <p class="edit-img__title subtitle">Фото профиля</p>
+                  <div class="edit-img__inner">
+                    <div class="edit-img__img">
+                      <img src="img/edit-photo.svg" width="158" height="158" alt="Фото профиля" />
+                    </div>
+                    <div class="edit-img__buttons">
+                      <label class="edit-img__btn edit-img__btn--change">
+                        Изменить
+                        <input class="visually-hidden" type="file" />
+                      </label>
+                      <button class="edit-img__btn edit-img__btn--delete" type="button">Удалить</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="edit__images-item edit-img edit-img--bg">
+                  <p class="edit-img__title subtitle">Фоновая картинка</p>
+                  <div class="edit-img__inner">
+                    <div class="edit-img__img">
+                      <img src="img/edit-bg.svg" width="158" height="158" alt="Фоновая картинка" />
+                    </div>
+                    <div class="edit-img__buttons">
+                      <label class="edit-img__btn edit-img__btn--change">
+                        Изменить
+                        <input class="visually-hidden" type="file" />
+                      </label>
+                      <button class="edit-img__btn edit-img__btn--delete" type="button">Удалить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="edit__box">
+              <div class="edit__container">
+                <p class="edit__title subtitle">Информация о человеке</p>
+                <div class="edit__items">
+                  <div class="edit__item">
+                    <input class="edit__input form-control" type="text" placeholder="ФИО" />
+                  </div>
+                  <label class="edit__item form-datepicker">
+                    <input class="edit__input form-control form-datepicker__input" type="text"
+                      placeholder="Дата рождения" />
+                    <i class="form-datepicker__icon"></i>
+                  </label>
+                  <label class="edit__item form-datepicker">
+                    <input class="edit__input form-control form-datepicker__input" type="text"
+                      placeholder="Дата смерти" />
+                    <i class="form-datepicker__icon"></i>
+                  </label>
+                </div>
+                <p class="edit__caption">Прожито лет: <span>0</span></p>
+              </div>
+            </div>
+            <div class="edit__box">
+              <div class="edit__container">
+                <p class="edit__title subtitle">Координаты местонахождения QR кода</p>
+                <div class="edit__items edit__items--row">
+                  <div class="edit__item">
+                    <input class="edit__input form-control" type="number" placeholder="Широта" />
+                  </div>
+                  <div class="edit__item">
+                    <input class="edit__input form-control" type="number" placeholder="Долгота" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="edit__box">
+              <p class="edit__title subtitle">Описание</p>
+              <div class="edit__desc">
+                <div class="quill-container"></div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="edit__btn btn-primary btn-primary--sm">Сохранить</button>
+            </div>
+          </form>
+        </div>
+        <div class="edit__content-item edit-media" data-tabs="2">
+          <form action="#">
+            <div class="edit-media__header">
+              <p class="edit-media__title subtitle">Медиа на странице</p>
+              <div class="edit-media__buttons">
+                <label class="edit-media__btn btn-outline btn-outline--xs">
+                  <input class="visually-hidden" type="file" />
+                  <i class="edit-media__icon media-icon"></i>
+                  Добавить медиа
+                </label>
+                <button class="edit-media__btn btn-primary btn-primary--xs" data-modal="modal-add-album"
+                  disabled>Создать альбом</button>
+              </div>
+            </div>
+            <div class="edit-media__body">
+              <div class="edit-media__empty">
+                <p class="edit-media__empty-text">Вы еще не добавили медиа</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMenu();
 	initModals();
 	initTabs('.general__tab', '.general__content-item');
+	initTabs('.public__tab', '.public__content-item');
 	initTabs('.order-form__tab', '.order-form__tabs-item');
 	initTabs('.login__link', '.login__form');
+	initTabs('.edit__tab', '.edit__content-item');
 	initSlider('.news__slider', {
 		perPage: 2,
 		perMove: 1,
@@ -37,37 +39,113 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		},
 	});
-	initThumbsSlider('.product__slider', '.product__thumbs')
+	initSlider('.public__slider', {
+		perPage: 5,
+		perMove: 1,
+		pagination: false,
+		gap: 40,
+		speed: 1000,
+		breakpoints: {
+			580: {
+				perPage: 2,
+			},
+			900: {
+				perPage: 3,
+			},
+			1024: {
+				perPage: 4
+			}
+		},
+	});
+	initGallerySlider('.modal-gallery__slider', '.modal-gallery__thumbs');
+	initThumbsSlider('.product__slider', '.product__thumbs');
 	initSeoMore();
 	initProductCounter();
 	initRadioTabs();
 	initTogglePassword();
-	initScrollbars();
 	initFileInput('.contacts__file');
+	initAccordions('.qr-card', '.qr-card__toggle', '.qr-card__hidden');
+	initAccordions('.public-reviews__item', '.public-reviews__toggle', '.public-reviews__answer');
+	initScrollbars();
+	initCountdownTimer('.public__timer');
+	initSelects();
 
+	function initSelects() {
+		const selects = document.querySelectorAll('.custom-select');
+
+		selects.forEach(select => {
+			NiceSelect.bind(select);
+		});
+	}
+
+	function initCountdownTimer(selector) {
+		const timerElement = document.querySelector(selector);
+
+		if (!timerElement) return;
+
+		var startDateString = timerElement.getAttribute("data-start-date");
+		var endDateString = timerElement.getAttribute("data-end-date");
+
+		var startDate = new Date(startDateString);
+		var endDate = new Date(endDateString);
+
+		var timerInterval = setInterval(function () {
+			updateTime();
+		}, 1000);
+
+		updateTime();
+
+		function updateTime() {
+			var now = new Date().getTime();
+			var difference = endDate.getTime() - now;
+
+			if (difference < 0) {
+				clearInterval(timerInterval);
+				timerElement.innerHTML = "Expired";
+				return;
+			}
+
+			var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+			var formattedTime =
+				(days < 10 ? "0" + days : days) + ":" +
+				(hours < 10 ? "0" + hours : hours) + ":" +
+				(minutes < 10 ? "0" + minutes : minutes) + ":" +
+				(seconds < 10 ? "0" + seconds : seconds);
+
+			timerElement.innerHTML = formattedTime;
+		}
+	}
+
+
+	// Инпуты с кастомной кнопкой и отображением имени файла
 	function initFileInput(selector) {
 		const parent = document.querySelector(selector);
-		
-			if (!parent) return;
 
-			const fileInput = parent.querySelector('input');
-			const fileSpan = parent.querySelector('span');
+		if (!parent) return;
 
-			fileInput.addEventListener('change', function() {
-				const fileName = this.files[0].name;
-				fileSpan.textContent = fileName;
-			});
+		const fileInput = parent.querySelector('input');
+		const fileSpan = parent.querySelector('span');
+
+		fileInput.addEventListener('change', function () {
+			const fileName = this.files[0].name;
+			fileSpan.textContent = fileName;
+		});
 	}
-	
+
+	// Кастомный скролл
 	function initScrollbars() {
 		const items = document.querySelectorAll('.overlay-scrollbar');
 
-		items.forEach(item => {
+		items.forEach((item) => {
 			const osInstance = OverlayScrollbars(item, {});
-		})
+		});
 	}
 
-	// Show more block
+	// Показать больше в SEO блоке
 	function initSeoMore() {
 		const container = document.querySelector('.seo__text');
 		const btn = document.querySelector('.seo__btn');
@@ -76,16 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		btn.addEventListener('click', () => {
 			container.classList.add('is-active');
-		})
+		});
 	}
 
+	// Переключение инпута пароля с видимого на невидимый
 	function initTogglePassword() {
 		const items = document.querySelectorAll('.form-password');
 
-		items.forEach(item => {
+		items.forEach((item) => {
 			const input = item.querySelector('input');
 			const btn = item.querySelector('.form-password__btn');
-			
+
 			btn.addEventListener('click', (e) => {
 				if (item.classList.contains('is-show')) {
 					item.classList.remove('is-show');
@@ -94,14 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
 					item.classList.add('is-show');
 					input.type = 'text';
 				}
-			})
-		})
+			});
+		});
 	}
-	
-	function initRadioTabs() {
-		const radios = document.querySelectorAll('.order-form__radios--tabs .form-radio-icons__item');
 
-		radios.forEach(triggerNode => {
+	// Табы-радиокнопки в оформлении заказа
+	function initRadioTabs() {
+		const radios = document.querySelectorAll(
+			'.order-form__radios--tabs .form-radio-icons__item'
+		);
+
+		radios.forEach((triggerNode) => {
 			const input = triggerNode.querySelector('input');
 
 			input.addEventListener('change', (e) => {
@@ -111,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				const activeParent = document.querySelector(
 					'.order-form__radio-content.is-active'
 				);
-	
+
 				const id = triggerNode.getAttribute('data-tabs');
 				const newActiveParent = document.querySelector(
 					'.order-form__radio-content[data-tabs="' + id + '"]'
@@ -121,12 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
 				activeTrigger.classList.remove('is-active');
 				triggerNode.classList.add('is-active');
 				newActiveParent.classList.add('is-active');
-			})
-		})
-
+			});
+		});
 	}
 
-	// Product counter
+	// Счётчик товара
 	function initProductCounter() {
 		const counter = document.querySelector('.product__counter');
 		const price = document.querySelector('#productPrice');
@@ -155,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			} else {
 				btnPlus.disabled = false;
 			}
-			
+
 			// Блокировка кнопки - при макисмальном значении
 			if (+value <= +input.min) {
 				btnMinus.disabled = true;
@@ -163,10 +244,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				btnMinus.disabled = false;
 			}
 
-			// Ограничение input значениями min и max 
+			// Ограничение input значениями min и max
 			if (+value > +input.max) {
 				input.value = +input.max;
-			} 
+			}
 			if (+value < +input.min) {
 				input.value = +input.min;
 			}
@@ -176,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	// Menu
+	// Меню
 	function initMenu() {
 		const header = document.querySelector('.header');
 
@@ -221,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		);
 	}
 
-	// Modals
+	// Модальные окна (можно обратиться с любого места через window.SimpleModal, есть функции open, close и т.д, асинхронные)
 	function initModals() {
 		const options = {
 			transitionDelay: 350,
@@ -232,14 +313,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			onClose: () => {
 				document.querySelector('.page-wrapper').ariaHidden = false;
 			},
-			fixedBlocks: [document.querySelector('.header')],
+			fixedBlocks: [],
 		};
 
 		window.SimpleModal = new SimpleModal(options);
 		window.SimpleModal.init();
 	}
 
-	// Sliders
+	// Слайдеры
 	function initSlider(selector, options) {
 		const slider = document.querySelector(selector);
 
@@ -250,17 +331,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		splide.mount(window.splide.Extensions);
 	}
 
+	// Слайдеры с миниатюрами
 	function initThumbsSlider(mainSelector, thumbsSelector) {
 		const slider = document.querySelector(mainSelector);
 
 		if (!slider) return;
-		
+
 		const main = new Splide(mainSelector, {
 			type: 'fade',
 			rewind: true,
 			arrows: false,
 		});
-
 
 		const thumbnails = new Splide(thumbsSelector, {
 			perPage: 4,
@@ -277,10 +358,40 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		});
 
-
 		main.sync(thumbnails);
 		main.mount();
 		thumbnails.mount();
 	}
 
+	// Слайдеры с фото и видео
+	function initGallerySlider(mainSelector, thumbsSelector) {
+		const slider = document.querySelector(mainSelector);
+
+		if (!slider) return;
+
+		const main = new Splide(mainSelector, {
+			type: 'fade',
+			rewind: true,
+			arrows: false,
+		});
+
+		const thumbnails = new Splide(thumbsSelector, {
+			perPage: 4,
+			gap: 16,
+			rewind: true,
+			pagination: false,
+			arrows: false,
+			isNavigation: true,
+			breakpoints: {
+				600: {
+					fixedWidth: 84,
+					fixedHeight: 87,
+				},
+			},
+		});
+
+		main.sync(thumbnails);
+		main.mount();
+		thumbnails.mount();
+	}
 });

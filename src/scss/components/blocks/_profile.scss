@@ -1,0 +1,74 @@
+.profile-page {
+  flex-grow: 1;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  min-height: 90vh;
+
+  &__main {
+    padding-bottom: 0;
+  }
+
+  &__pagination {
+    padding-top: 40px;
+  }
+
+  &__inner {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+  }
+}
+
+.profile {
+  &__logout {
+    position: relative;
+    border-radius: 12px;
+    padding: 12px 17px 12px 45px;
+    color: $red;
+    background: rgba(255, 84, 84, 20%);
+    transition: background $transition;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 17px;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' d='M7.54333 3.75C7.5 4.23136 7.5 4.83629 7.5 5.60152V14.3984C7.5 15.1637 7.5 15.7687 7.54334 16.25H6.66667C4.70248 16.25 3.72039 16.25 3.11019 15.6398C2.5 15.0296 2.5 14.0475 2.5 12.0833V7.91667C2.5 5.95248 2.5 4.97039 3.11019 4.36019C3.72039 3.75 4.70248 3.75 6.66667 3.75H7.54333Z' fill='%23FF8A8A'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.08937 2.00733C7.5 2.52982 7.5 3.48557 7.5 5.39708V14.6031C7.5 16.5146 7.5 17.4703 8.08937 17.9928C8.67875 18.5153 9.57958 18.3582 11.3813 18.0439L13.322 17.7055C15.3174 17.3574 16.3151 17.1834 16.9076 16.4515C17.5 15.7197 17.5 14.6612 17.5 12.5442V7.456C17.5 5.339 17.5 4.28051 16.9076 3.54863C16.3151 2.81674 15.3174 2.64273 13.322 2.29469L11.3813 1.95621C9.57958 1.64196 8.67875 1.48484 8.08937 2.00733ZM10.625 9.12799C10.625 8.76674 10.3452 8.47391 10 8.47391C9.65483 8.47391 9.375 8.76674 9.375 9.12799V10.8722C9.375 11.2334 9.65483 11.5262 10 11.5262C10.3452 11.5262 10.625 11.2334 10.625 10.8722V9.12799Z' fill='%23FF8A8A'/%3E%3C/svg%3E%0A") center / cover no-repeat;
+      transform: translateY(-50%);
+    }
+
+    @include hover {
+      background-color: rgba(255, 84, 84, 25%);
+    }
+  }
+
+  &__container {
+    max-width: 400px;
+  }
+
+  &__togglers {
+    margin-bottom: 14px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin-right: 12px;
+  }
+
+  &__items {
+    margin-bottom: 14px;
+  }
+
+  &__item {
+    @include mb(24px);
+  }
+}

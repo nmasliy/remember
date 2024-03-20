@@ -1,0 +1,9 @@
+.splide {
+  &__arrow {
+    transition: opacity $transition;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}

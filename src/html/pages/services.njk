@@ -1,0 +1,31 @@
+{% extends "../templates/layouts/layout-profile.njk" %}
+
+{% block aside %}
+<aside class="profile-page__aside sidebar">
+  <ul class="sidebar__list">
+    <li>
+      <a href="./profile.html">Профиль</a>
+    </li>
+    <li>
+      <a href="./qr.html">Мои QR - Коды</a>
+    </li>
+    <li class="is-active">
+      <a href="./services.html">Доп. услуги</a>
+    </li>
+    <li>
+      <a href="./responses.html">Отклики <span>+1</span></a>
+    </li>
+    <li>
+      <a href="./notifications.html">Уведомления</a>
+    </li>
+  </ul>
+</aside>
+{% endblock aside %}
+{% block content %}
+{% include "../blocks/profile/services.njk" %}
+{% endblock content %}
+{% block outside %}
+<div class="profile-page__pagination">
+  {% include "../blocks/pagination.njk" %}
+</div>
+{% endblock outside %}

@@ -16,6 +16,9 @@
     {% include "../base/footer.njk" %}
     {% endblock footer %}
   </div>
+  {% include "../base/modals.njk" %}
+  {% block extraScripts %}
+  {% endblock extraScripts %}
   {% block scripts %}
   {% include "../base/scripts.njk" %}
   {% endblock %}

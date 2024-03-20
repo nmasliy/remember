@@ -337,7 +337,7 @@ class SimpleModal {
 
     modalNode.setAttribute('aria-hidden', false);
     this.isAnimated = true;
-
+    
     await waitFor(1);
 
     modalNode.classList.add('is-open');
@@ -424,28 +424,30 @@ class SimpleModal {
   _enableScroll(modalNode) {
     if (this.options.fixPageOffset) {
       this.options.fixedBlocks.forEach((el) => (el.style.paddingRight = ''));
-
-      modalNode.style.paddingRight = '';
       this.body.style.paddingRight = '';
     }
 
     this.html.style.overflow = '';
     this.body.style.overflow = '';
+
+    if (this.options.fixPageOffset) {
+      modalNode.style.paddingRight = '';
+    }
   }
 
   _disableScroll(modalNode) {
+    const scrollWidth = window.innerWidth - this.body.offsetWidth + 'px';
     if (this.options.fixPageOffset) {
-      const scrollWidth = window.innerWidth - this.body.offsetWidth + 'px';
       this.options.fixedBlocks.forEach(
         (el) => (el.style.paddingRight = scrollWidth)
       );
 
-      modalNode.style.paddingRight = scrollWidth;
       this.body.style.paddingRight = scrollWidth;
     }
-
+    
     this.html.style.overflow = 'hidden';
     this.body.style.overflow = 'hidden';
+
   }
 }
 // End Modals
@@ -527,23 +529,23 @@ function initAccordions(itemsSelector, controlSelector, contentSelector) {
   if (accordions.length <= 0) return;
 
   accordions.forEach(item => {
-    item.addEventListener('click', (e) => {
-      const control = item.querySelector(controlSelector);
-      const content = item.querySelector(contentSelector);
+    const control = item.querySelector(controlSelector);
+    const content = item.querySelector(contentSelector);
 
+    control.addEventListener('click', (e) => {
       item.classList.toggle('is-active');
 
       if (item.classList.contains('is-active')) {
         control.setAttribute('aria-expanded', true);
-        control.setAttribute('aria-label', 'Свернуть вопрос');
-        control.setAttribute('title', 'Свернуть вопрос');
+        control.setAttribute('aria-label', 'Свернуть');
+        control.setAttribute('title', 'Свернуть');
         content.setAttribute('aria-hidden', false);
         content.style.maxHeight = content.scrollHeight + 'px';
       } else {
         control.setAttribute('aria-expanded', false);
         content.setAttribute('aria-hidden', true);
-        control.setAttribute('aria-label', 'Развернуть вопрос');
-        control.setAttribute('title', 'Развернуть вопрос');
+        control.setAttribute('aria-label', 'Развернуть');
+        control.setAttribute('title', 'Развернуть');
         content.style.maxHeight = null;
       }
     })

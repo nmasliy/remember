@@ -1,5 +1,8 @@
 .btn-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $yellow;
   border-radius: 16px;
   padding: 10px 20px;
   font-weight: 500;
@@ -9,9 +12,15 @@
   color: $carbon;
   background: $yellow;
   transition: $transition;
+  cursor: pointer;
+
+  i {
+    margin-right: 4px;
+  }
 
   &:focus,
   &:active {
+    border-color: #d6c150;
     background-color: #d6c150;
   }
 
@@ -23,11 +32,217 @@
 
   &--sm {
     padding: 16px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  &--xs {
+    padding: 10px 20px;
+    font-weight: 400;
     font-size: 20px;
   }
 
   @include hover {
+    border-color: #d6c150;
     background-color: #d6c150;
+  }
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $carbon;
+  border-radius: 16px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: normal;
+  text-align: center;
+  color: $yellow;
+  background: $carbon;
+  transition: $transition;
+  cursor: pointer;
+
+  i {
+    margin-right: 4px;
+  }
+
+  &:focus,
+  &:active {
+    border-color: #202020;
+    background-color: #202020;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &--sm {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  &--xs {
+    padding: 10px 20px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  @include hover {
+    border-color: #202020;
+    background-color: #202020;
+  }
+}
+
+.btn-transparent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: normal;
+  text-align: center;
+  color: $carbon;
+  background: transparent;
+  transition: color $transition;
+  cursor: pointer;
+
+  i {
+    margin-right: 4px;
+  }
+
+  &:focus,
+  &:active {
+    color: $black;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &--sm {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  &--xs {
+    padding: 10px 20px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  @include hover {
+    color: $black;
+  }
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $carbon;
+  border-radius: 16px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: normal;
+  text-align: center;
+  color: $carbon;
+  background: transparent;
+  transition: $transition;
+  cursor: pointer;
+
+  i {
+    margin-right: 4px;
+  }
+
+  &:focus,
+  &:active {
+    border-color: $blue;
+    color: $blue;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &--sm {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  &--xs {
+    padding: 10px 20px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  @include hover {
+    border-color: $blue;
+    color: $blue;
+  }
+}
+
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $red;
+  border-radius: 16px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: normal;
+  text-align: center;
+  color: $red;
+  background: transparent;
+  transition: $transition;
+  cursor: pointer;
+
+  i {
+    margin-right: 4px;
+  }
+
+  &:focus,
+  &:active {
+    border-color: $carbon;
+    color: $carbon;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &--sm {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  &--xs {
+    padding: 10px 20px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  @include hover {
+    border-color: $carbon;
+    color: $carbon;
   }
 }
 
@@ -35,10 +250,10 @@
   display: block;
   outline: transparent;
   border: none;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   box-shadow: none;
-  color: rgba($black, 0.3);
+  color: $midnight;
   background: 0;
   transition: $transition;
   cursor: pointer;
@@ -50,7 +265,7 @@
     left: 50%;
     top: 50%;
     width: 2px;
-    height: 20px;
+    height: 16px;
     background-color: currentcolor;
     transform: translate(-50%, -50%);
     transform-origin: center;
@@ -65,7 +280,18 @@
   }
 
   @include hover {
-    color: $yellow;
-    transform: rotate(90deg);
+    color: $carbon;
+
+    // transform: rotate(30deg);
+  }
+}
+
+.link {
+  border-bottom: 1px solid currentcolor;
+  color: $yellow;
+  transition: color $transition, border-color $transition;
+
+  @include hover {
+    color: #e7d154;
   }
 }

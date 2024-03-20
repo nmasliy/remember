@@ -1,20 +1,46 @@
 {% extends "../templates/layouts/layout.njk" %}
 {% block content %}
+<style>
+  h1 {
+    font-size: 60px;
+    margin: 20px 0;
+  }
+
+  .py-2 {
+    padding: 10px 0;
+  }
+</style>
 <div class="text-section">
   <div class="container">
-    <div> <a href="./index.html">Главная</a></div>
-    <div> <a href="./order.html">Оформление заказа</a></div>
-    <div> <a href="./order-done.html">Заказ оформлен</a></div>
-    <div> <a href="./product.html">Магазин</a></div>
-    <div> <a href="./reviews.html">Отзывы</a></div>
-    <div> <a href="./cart.html">Корзина</a></div>
-    <div> <a href="./login.html">Кабинет пользователя вход</a></div>
-    <div> <a href="./about.html">О нас</a></div>
-    <div> <a href="./news.html">Новости</a></div>
-    <div> <a href="./article.html">Статья</a></div>
-    <div> <a href="./contacts.html">Контакты</a></div>
-    <div> <a href="./text.html">Текстовая</a></div>
-    <!-- <button data-modal-open="modal-1">Open modal</button> -->
+    <div class="py-2"> <a href="./index.html">Главная</a></div>
+    <div class="py-2"> <a href="./order.html">Оформление заказа</a></div>
+    <div class="py-2"> <a href="./order-done.html">Заказ оформлен</a></div>
+    <div class="py-2"> <a href="./product.html">Магазин</a></div>
+    <div class="py-2"> <a href="./reviews.html">Отзывы</a></div>
+    <div class="py-2"> <a href="./cart.html">Корзина</a></div>
+    <div class="py-2"> <a href="./login.html">Кабинет пользователя вход</a></div>
+    <div class="py-2"> <a href="./about.html">О нас</a></div>
+    <div class="py-2"> <a href="./news.html">Новости</a></div>
+    <div class="py-2"> <a href="./article.html">Статья</a></div>
+    <div class="py-2"> <a href="./contacts.html">Контакты</a></div>
+    <div class="py-2"> <a href="./text.html">Текстовая</a></div>
+    <hr />
+    <h1>Кабинет</h1>
+    <div class="py-2"> <a href="./profile.html">Профиль</a></div>
+    <div class="py-2"> <a href="./qr.html">Мои QR - Коды</a></div>
+    <div class="py-2"> <a href="./edit.html">Редактирование</a></div>
+    <div class="py-2"> <a href="./edit-2.html">Редактирование v2 (заполненный медиа контент)</a></div>
+    <div class="py-2"> <a href="./public.html">Публичный профиль</a></div>
+    <div class="py-2"> <a href="./responses.html">Отклики</a></div>
+    <div class="py-2"> <a href="./responses-open.html">Управление откликом</a></div>
+    <div class="py-2"> <a href="./services.html">Доп. услуги</a></div>
+    <hr />
+    <h1>Попапы</h1>
+    <div class="py-2"><button data-modal="modal-change-password">Изменение пароля</button></div>
+    <div class="py-2"><button data-modal="modal-save">Сохранение изменений</button></div>
+
+    <hr />
+    <br />
     {% for i in range(0, 10) -%}
     <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis cupiditate assumenda placeat fuga libero
