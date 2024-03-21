@@ -90,7 +90,9 @@
   }
 
   &__rating {
+    display: block;
     margin-bottom: 24px;
+    transition: color $transition;
 
     span {
       position: relative;
@@ -98,6 +100,7 @@
       padding-left: 36px;
       font-size: 24px;
       color: $carbon;
+      transition: color $transition;
 
       &::before {
         content: "";
@@ -110,6 +113,14 @@
         background-position: center;
         background-repeat: no-repeat;
         transform: translateY(-50%);
+      }
+    }
+
+    @include hover {
+      color: $blue;
+
+      span {
+        color: $blue;
       }
     }
   }

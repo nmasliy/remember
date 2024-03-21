@@ -9,6 +9,10 @@
   .py-2 {
     padding: 10px 0;
   }
+
+  .text-section a {
+    text-decoration: underline;
+  }
 </style>
 <div class="text-section">
   <div class="container">
@@ -38,7 +42,10 @@
     <h1>Попапы</h1>
     <div class="py-2"><button data-modal="modal-change-password">Изменение пароля</button></div>
     <div class="py-2"><button data-modal="modal-save">Сохранение изменений</button></div>
-
+    <div class="py-2"><button data-modal="modal-add-review">Добавить отзыв</button></div>
+    <div class="py-2"><button data-modal="modal-review">Посмотреть отзыв</button></div>
+    <div class="py-2"><button data-modal="modal-response-delete">Удалить отклик</button></div>
+    <p>Модалки добавления альбома на <a href="./edit-2.html">странице редактирования</a> </p>
     <hr />
     <br />
     {% for i in range(0, 10) -%}

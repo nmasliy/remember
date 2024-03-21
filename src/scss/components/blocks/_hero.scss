@@ -70,8 +70,13 @@
     font-size: 28px;
     transition: color $transition;
 
+    &:focus,
+    &:active {
+      color: #d6c150;
+    }
+
     @include hover {
-      color: $blue;
+      color: $yellow;
     }
   }
 

@@ -27,13 +27,26 @@
 
       &.is-active {
         font-weight: 600;
+
+        a {
+          @include hover {
+            text-shadow: none;
+          }
+        }
       }
     }
 
     a {
-      transition: color $transition;
+      letter-spacing: normal;
+      transition: $transition;
+
+      &:focus,
+      &:active {
+        color: #103065;
+      }
 
       @include hover {
+        text-shadow: 0 0 0.65px $blue, 0 0 0.65px $blue;
         color: $blue;
       }
     }

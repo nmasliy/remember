@@ -230,6 +230,7 @@
   &__media {
     @include img-hover-scale;
 
+    display: block;
     border-radius: 10px;
     cursor: pointer;
   }

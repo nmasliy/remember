@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		},
 	});
-	initGallerySlider('.modal-gallery__slider', '.modal-gallery__thumbs');
 	initThumbsSlider('.product__slider', '.product__thumbs');
 	initSeoMore();
 	initProductCounter();
@@ -69,7 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	initScrollbars();
 	initCountdownTimer('.public__timer');
 	initSelects();
-
+	initArticleLikeDislike();
+	
+	// Кастомные селекты
 	function initSelects() {
 		const selects = document.querySelectorAll('.custom-select');
 
@@ -78,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	// Таймер обратного отсчета
 	function initCountdownTimer(selector) {
 		const timerElement = document.querySelector(selector);
 
@@ -120,6 +122,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
+	// Оценить статью 
+	function initArticleLikeDislike() {
+		const buttons = document.querySelectorAll('.article__stat-btn');
+		const likeBtn = document.querySelector('.article__like');
+		const dislikeBtn = document.querySelector('.article__dislike');
+
+		if (!likeBtn || !dislikeBtn) return;
+
+		likeBtn.addEventListener('click', (e) => toggleButtons(likeBtn));
+		dislikeBtn.addEventListener('click', (e) => toggleButtons(dislikeBtn));
+
+		function toggleButtons(btn) {
+			if (btn.classList.contains('is-active')) {
+				btn.classList.remove('is-active');
+				return;
+			}
+			buttons.forEach(item => item.classList.remove('is-active'));
+			btn.classList.add('is-active');
+		}
+	}
 
 	// Инпуты с кастомной кнопкой и отображением имени файла
 	function initFileInput(selector) {
@@ -363,35 +385,5 @@ document.addEventListener('DOMContentLoaded', () => {
 		thumbnails.mount();
 	}
 
-	// Слайдеры с фото и видео
-	function initGallerySlider(mainSelector, thumbsSelector) {
-		const slider = document.querySelector(mainSelector);
 
-		if (!slider) return;
-
-		const main = new Splide(mainSelector, {
-			type: 'fade',
-			rewind: true,
-			arrows: false,
-		});
-
-		const thumbnails = new Splide(thumbsSelector, {
-			perPage: 4,
-			gap: 16,
-			rewind: true,
-			pagination: false,
-			arrows: false,
-			isNavigation: true,
-			breakpoints: {
-				600: {
-					fixedWidth: 84,
-					fixedHeight: 87,
-				},
-			},
-		});
-
-		main.sync(thumbnails);
-		main.mount();
-		thumbnails.mount();
-	}
 });

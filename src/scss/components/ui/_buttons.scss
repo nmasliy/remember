@@ -159,7 +159,7 @@
   text-align: center;
   color: $carbon;
   background: transparent;
-  transition: $transition;
+  transition: background $transition;
   cursor: pointer;
 
   i {
@@ -168,8 +168,7 @@
 
   &:focus,
   &:active {
-    border-color: $blue;
-    color: $blue;
+    background-color: #e3e3e3;
   }
 
   &:disabled,
@@ -191,8 +190,7 @@
   }
 
   @include hover {
-    border-color: $blue;
-    color: $blue;
+    background-color: #e3e3e3;
   }
 }
 
@@ -218,8 +216,7 @@
 
   &:focus,
   &:active {
-    border-color: $carbon;
-    color: $carbon;
+    background-color: rgba(255, 84, 84, 10%);
   }
 
   &:disabled,
@@ -241,8 +238,7 @@
   }
 
   @include hover {
-    border-color: $carbon;
-    color: $carbon;
+    background-color: rgba(255, 84, 84, 10%);
   }
 }
 
