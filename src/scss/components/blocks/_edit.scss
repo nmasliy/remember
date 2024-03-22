@@ -133,6 +133,28 @@
 
   &__radio {
     @include mr(24px);
+
+    &--password {
+      input:checked ~ .edit__radio-password {
+        display: block;
+      }
+    }
+  }
+
+  &__radio-text {
+    display: flex;
+    align-items: center;
+  }
+
+  &__radio-password {
+    display: none;
+    margin-left: 16px;
+    width: 158px;
+  }
+
+  &__radio-tip {
+    flex-shrink: 0;
+    margin-left: 4px;
   }
 
   &__images {

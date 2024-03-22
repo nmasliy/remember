@@ -3,11 +3,11 @@
     <ul class="edit__stats">
       <li class="edit__stats-item">
         <p class="edit__stats-title">Просмотры</p>
-        <p class="edit__stats-value">12.346</p>
+        <p class="edit__stats-value">12 346</p>
       </li>
       <li class="edit__stats-item">
         <p class="edit__stats-title">Зажженные свечи</p>
-        <p class="edit__stats-value">12.346</p>
+        <p class="edit__stats-value">12 346</p>
       </li>
       <li class="edit__stats-item">
         <p class="edit__stats-title">Зажженные свечи</p>
@@ -39,12 +39,22 @@
                 <label class="edit__radio form-radio">
                   <input type="radio" name="access__type" value="1" checked />
                   <span class="form-radio__element"></span>
-                  <span class="form-radio__text">Открытый доступ</span>
+                  <span class="edit__radio-text form-radio__text">
+                    Открытый доступ
+                    <span class="edit__radio-tip tip"
+                      data-text="Страница будет доступна всем пользователям, которые отсканируют QR код"></span>
+                  </span>
                 </label>
-                <label class="edit__radio form-radio">
+                <label class="edit__radio edit__radio--password form-radio">
                   <input type="radio" name="access__type" value="2" />
                   <span class="form-radio__element"></span>
-                  <span class="form-radio__text">Закрытый доступ</span>
+                  <span class="edit__radio-text form-radio__text">
+                    Закрытый доступ
+                    <span class="edit__radio-tip tip"
+                      data-text="Страница будет доступна только тем пользователям, которые отсканируют QR код и введут пароль для доступа к информации"></span>
+                  </span>
+                  <input class="edit__radio-password form-control form-control--sm" placeholder="Пароль"
+                    type="password"></input>
                 </label>
               </div>
             </div>

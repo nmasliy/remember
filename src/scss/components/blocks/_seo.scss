@@ -25,10 +25,10 @@
     border-bottom: 1px solid transparent;
     font-weight: 600;
     color: $carbon;
-    transition: border-bottom $transition;
+    transition: color $transition;
 
     @include hover {
-      border-bottom-color: $carbon;
+      color: $yellow-dark;
     }
   }
 }

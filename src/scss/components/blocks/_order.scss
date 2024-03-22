@@ -1,9 +1,5 @@
 .order {
-  &__breadcrumbs {
-  }
-
-  &__inner {
-  }
+  padding-top: 0;
 
   &__title {
     margin-bottom: 24px;
@@ -32,11 +28,12 @@
     @include mb(44px);
   }
 
+  &__textarea {
+    height: 200px;
+  }
+
   &__title {
     margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 28px;
-    color: $carbon;
 
     &--center {
       text-align: center;
@@ -130,9 +127,6 @@
 
   &__name {
     margin-bottom: 3px;
-    font-weight: 500;
-    font-size: 28px;
-    color: $carbon;
   }
 
   &__table {
@@ -240,5 +234,125 @@
 
   &__btn {
     align-self: center;
+  }
+}
+
+@media (max-width: 1440px) {
+  .order-finish {
+    &__total {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .order {
+    padding-top: 0;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .order-finish {
+    &__total {
+      font-size: 22px;
+    }
+  }
+
+  .order-form {
+    &__finish {
+      .order-form__title {
+        font-size: 20px;
+      }
+    }
+
+    &__finish,
+    &__main {
+      padding: 22px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .order {
+    padding-top: 0;
+  }
+
+  .order-finish {
+    &__promo-input {
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    &__header {
+      padding-bottom: 24px;
+    }
+
+    &__info {
+      flex-grow: 1;
+    }
+
+    &__promo-btn {
+      padding: 12px;
+    }
+
+    &__body {
+      padding-bottom: 20px;
+    }
+
+    &__name {
+      font-size: 16px;
+    }
+
+    &__total {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      font-size: 20px;
+    }
+  }
+
+  .order-form {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__textarea {
+      height: 150px;
+    }
+
+    &__inner {
+      display: block;
+      border: none;
+    }
+
+    &__tabs {
+      display: flex;
+    }
+
+    &__box {
+      @include mb(20px);
+    }
+
+    &__tab {
+      flex-grow: 1;
+      font-size: 12px;
+    }
+
+    &__main {
+      margin-bottom: 20px;
+    }
+
+    &__item,
+    &__radios {
+      @include mb(12px);
+    }
+
+    &__finish,
+    &__main {
+      padding: 0;
+      background: transparent;
+    }
   }
 }

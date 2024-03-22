@@ -70,11 +70,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Перемещение элементов на брейкпоинтах
 	function initAdaptive() {
-		moveElementOnBreakpoint({
-			element: '.header__user',
-			breakpoint: 580,
-			to: ['.header__menu', '1']
-		})
+		moveElementOnBreakpoint(
+			'.header__user',
+			{ fromSelector: '.header__burger', fromPosition: 'beforebegin' },
+			{ toSelector: '.header__menu', toPosition: 'beforeend' },
+			580
+		);
+		moveElementOnBreakpoint(
+			'.product__price',
+			{ fromSelector: '.product__info', fromPosition: 'beforebegin' },
+			{ toSelector: '.product__form-inner', toPosition: 'afterbegin' },
+			1024
+		);
+		moveElementOnBreakpoint(
+			'.product__price',
+			{ fromSelector: '.product__bottom-wrapper', fromPosition: 'beforebegin' },
+			{ toSelector: '.product__counter-wrapper', toPosition: 'beforeend' },
+			768
+		);
+		moveElementOnBreakpoint(
+			'.product__bottom-wrapper',
+			{ fromSelector: '.product__form form', fromPosition: 'beforeend' },
+			{ toSelector: '.product__inner--cart', toPosition: 'afterend' },
+			768
+		);
 	}
 
 	// Кастомные селекты
@@ -404,6 +423,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					fixedWidth: 84,
 					fixedHeight: 87,
 				},
+				768: {
+					perPage: 5,
+				}
 			},
 		});
 

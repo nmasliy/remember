@@ -133,7 +133,7 @@
 
   &__line {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 24px;
   }
 
@@ -158,11 +158,9 @@
         position: absolute;
         left: 0;
         top: 50%;
-        width: 33px;
-        height: 33px;
-        background-image: url("data:image/svg+xml,%3Csvg width='29' height='27' viewBox='0 0 29 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.855 18.3979L11.4589 18.6857L11.6102 18.2201C12.2126 16.366 11.5527 14.3349 9.97549 13.189L8.01732 15.8841L9.97549 13.189L9.57946 12.9012H10.069C12.0185 12.9012 13.7463 11.6459 14.3487 9.79179L14.5 9.32623L14.6513 9.7918C15.2537 11.6459 16.9815 12.9012 18.931 12.9012H19.4205L19.0245 13.189C17.4473 14.3348 16.7874 16.366 17.3898 18.2201L17.5411 18.6857L17.145 18.3979L15.0878 21.2295L17.145 18.3979C15.5678 17.252 13.4322 17.252 11.855 18.3979Z' fill='white' stroke='%23FFE661' stroke-width='7'/%3E%3C/svg%3E%0A");
-        background-position: center;
-        background-repeat: no-repeat;
+        width: 29px;
+        height: 27px;
+        background: url("data:image/svg+xml,%3Csvg width='29' height='27' viewBox='0 0 29 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.855 18.3979L11.4589 18.6857L11.6102 18.2201C12.2126 16.366 11.5527 14.3349 9.97549 13.189L8.01732 15.8841L9.97549 13.189L9.57946 12.9012H10.069C12.0185 12.9012 13.7463 11.6459 14.3487 9.79179L14.5 9.32623L14.6513 9.7918C15.2537 11.6459 16.9815 12.9012 18.931 12.9012H19.4205L19.0245 13.189C17.4473 14.3348 16.7874 16.366 17.3898 18.2201L17.5411 18.6857L17.145 18.3979L15.0878 21.2295L17.145 18.3979C15.5678 17.252 13.4322 17.252 11.855 18.3979Z' fill='white' stroke='%23FFE661' stroke-width='7'/%3E%3C/svg%3E%0A") center / cover no-repeat;
         transform: translateY(-50%);
       }
     }
@@ -242,9 +240,38 @@
       }
     }
   }
+
+  .reviews-page {
+    padding-top: 0;
+
+    &__rating {
+      span {
+        padding-left: 24px;
+        font-size: 20px;
+
+        &::before {
+          width: 19px;
+          height: 18px;
+        }
+      }
+    }
+
+    &__list {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
+  .reviews-page {
+    padding-top: 0;
+
+    &__list {
+      margin-bottom: 12px;
+    }
+  }
+
   .reviews {
     &__header {
       margin-bottom: 20px;
@@ -257,6 +284,27 @@
         content: attr(data-text-mobile);
         font-size: 20px;
       }
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .reviews-page {
+    &__list {
+      display: block;
+    }
+
+    &__line {
+      display: block;
+    }
+
+    &__rating {
+      margin-right: 0;
+      margin-bottom: 12px;
+    }
+
+    &__item {
+      @include mb(10px);
     }
   }
 }

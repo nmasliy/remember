@@ -217,6 +217,31 @@
   .subtitle {
     font-size: 20px;
   }
+
+  .pagination {
+    font-size: 16px;
+
+    &__item {
+      a {
+        width: 20px;
+        height: 20px;
+      }
+
+      &.is-active {
+        color: $yellow;
+        background-color: $carbon;
+      }
+    }
+
+    &__arrow {
+      background-size: 7px 16px;
+
+      a {
+        width: 20px;
+        height: 38px;
+      }
+    }
+  }
 }
 
 @media (max-width: $menu-breakpoint) {

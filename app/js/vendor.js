@@ -31,54 +31,41 @@ const throttle = (func, delay = 250) => {
 // End Throttle helper function
 
 // Responsive helper function
-function moveElementOnBreakpoint({ element: movedSelector, to: [toSelector, toPosition = 0], breakpoint }) {
+function moveElementOnBreakpoint(
+  movedSelector,
+  { fromSelector, fromPosition = 'beforeend' },
+  { toSelector, toPosition = 'beforeend' },
+  breakpoint = 1024) {
+
   const movedNode = document.querySelector(movedSelector);
 
-  if (!movedNode) {
-    // console.error(`${movedSelector} is not valid selector!`)
-    return;
-  }
+  if (!movedNode) return;
+
+  const fromNode = document.querySelector(fromSelector);
+  const toNode = document.querySelector(toSelector);
+
+  if (!fromNode || !toNode) return;
 
   let isMoved = false;
 
-  const fromNode = movedNode.parentElement || document.body;
-  const toNode = document.querySelector(toSelector);
-
-  if (!toNode) {
-    // console.error(`${toSelector} is not valid selector!`)
-    return;
-  }
-
-  const initialIndex = Array.from(fromNode.children).indexOf(movedNode);
-
   function move() {
-    const windowWidth = window.innerWidth;
-
-    if (windowWidth <= breakpoint && !isMoved) {
-      if (toNode.children.length > 0) {
-        toNode.insertBefore(movedNode, toNode.children[toPosition]);
-      } else {
-        toNode.appendChild(movedNode);
+    if (window.innerWidth <= breakpoint) {
+      if (!isMoved) {
+        toNode.insertAdjacentElement(toPosition, movedNode);
+        isMoved = true;
       }
-      isMoved = true;
-    } else if (windowWidth > breakpoint && isMoved) {
-      if (fromNode.children.length > 0) {
-        const children = Array.from(fromNode.children);
-        const newPosition = Math.min(initialIndex, children.length - 1);
-
-        fromNode.insertBefore(movedNode, children[newPosition].nextSibling);
-      } else {
-        fromNode.appendChild(movedNode);
+    } else {
+      if (isMoved) {
+        fromNode.insertAdjacentElement(fromPosition, movedNode);
+        isMoved = false;
       }
-      isMoved = false;
     }
   }
 
-  window.addEventListener('resize', throttle(() => move()));
+  window.addEventListener('resize', throttle(move));
 
   move();
 }
-
 
 // Responsive helper function
 

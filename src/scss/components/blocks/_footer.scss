@@ -138,3 +138,104 @@
   color: $white;
   background-color: $carbon;
 }
+
+@media (max-width: 1440px) {
+  .footer {
+    &__form-title {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .footer {
+    padding: 30px 0;
+
+    &__form-title {
+      font-size: 20px;
+    }
+
+    &__info {
+      margin-bottom: 28px;
+    }
+
+    &__form {
+      grid-template-columns: 1fr 1.2fr;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+    }
+
+    &__body {
+      display: block;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 16px;
+
+    &__list {
+      justify-content: flex-start;
+    }
+
+    &__nav {
+      font-size: 20px;
+    }
+
+    &__form-title {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    &__form {
+      display: block;
+      margin-bottom: 14px;
+      padding-bottom: 20px;
+    }
+
+    &__socials {
+      @include mr(18px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    &__form-inner {
+      display: block;
+    }
+
+    &__input-wrapper {
+      margin-right: 0;
+      margin-bottom: 12px;
+    }
+
+    &__payments {
+      margin-bottom: 22px;
+
+      li {
+        @include mr(12px);
+      }
+    }
+
+    &__btn {
+      border-radius: 16px;
+      width: 100%;
+    }
+
+    &__socials {
+      margin-bottom: 20px;
+
+      li {
+        @include mr(12px);
+      }
+    }
+
+    &__bottom {
+      display: block;
+    }
+  }
+}

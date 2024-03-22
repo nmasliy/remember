@@ -1,4 +1,4 @@
-<section class="product section">
+<section class="product product-cart section">
   <div class="container">
     <ul class="product__breadcrumbs breadcrumbs">
       <li><a href="./">Главная/</a></li>
@@ -6,7 +6,7 @@
       <li>Корзина</li>
     </ul>
     <h1 class="product__title product__title--main title">Корзина</h1>
-    <div class="product__inner">
+    <div class="product__inner product__inner--cart">
       <div class="product__img">
         <img src="img/qr-box.jpg" width="420" height="384" alt="">
       </div>
@@ -14,16 +14,20 @@
         <h2 class="product__title title">Название товара</h2>
         <div class="product__form">
           <form>
-            <div class="product__counter product__counter--cart counter">
-              <button class="counter__btn counter__btn--minus" type="button"></button>
-              <input class="counter__input" type="number" name="product_count" min="1" max="99" value="1" />
-              <button class="counter__btn counter__btn--plus" type="button"></button>
+            <div class="product__counter-wrapper">
+              <div class="product__counter product__counter--cart counter">
+                <button class="counter__btn counter__btn--minus" type="button"></button>
+                <input class="counter__input" type="number" name="product_count" min="1" max="99" value="1" />
+                <button class="counter__btn counter__btn--plus" type="button"></button>
+              </div>
             </div>
             <p class="product__text">1шт. - $100</p>
-            <p class="product__price product__price--offset-sm">$<span data-price="100" id="productPrice">100</span></p>
-            <p class="product__text">Добавьте еще 1 товар и получите скидку 10%</p>
-            <p class="product__text product__text--offset-sm">Бесплатная доставка</p>
-            <button class="product__btn btn-primary">Оформить заказ</button>
+            <p class="product__price product__price--cart">$<span data-price="100" id="productPrice">100</span></p>
+            <div class="product__bottom-wrapper">
+              <p class="product__text">Добавьте еще 1 товар и получите скидку 10%</p>
+              <p class="product__text product__text--cart">Бесплатная доставка</p>
+              <button class="product__btn btn-primary">Оформить заказ</button>
+            </div>
           </form>
         </div>
       </div>

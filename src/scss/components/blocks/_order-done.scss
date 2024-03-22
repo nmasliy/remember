@@ -180,3 +180,27 @@
     transform: translateX(350px) scale(1.9);
   }
 }
+
+@media (max-width: 1440px) {
+  .order-done {
+    &__title {
+      font-size: 100px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .order-done {
+    &__title {
+      font-size: 72px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .order-done {
+    &__title {
+      font-size: 56px;
+    }
+  }
+}

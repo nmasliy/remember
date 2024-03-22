@@ -32,6 +32,12 @@
   &.is-valid {
     border-color: $green;
   }
+
+  &--sm {
+    padding: 9px 12px;
+    width: auto;
+    font-size: 20px;
+  }
 }
 
 .form-error {
@@ -231,11 +237,13 @@
   user-select: none;
 
   input {
-    @include visually-hidden;
-
     &:checked ~ .form-radio__element {
       border-color: $carbon;
       background-color: $yellow;
+    }
+
+    &[type="radio"] {
+      @include visually-hidden;
     }
   }
 
@@ -274,5 +282,51 @@
     transform: translateY(-50%);
     transition: opacity $transition;
     pointer-events: none;
+  }
+}
+
+@media (max-width: 1440px) {
+  .form-control {
+    font-size: 24px;
+
+    &--sm {
+      font-size: 20px;
+    }
+  }
+
+  .form-toggle {
+    &__caption {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .form-control {
+    font-size: 20px;
+
+    &--sm {
+      font-size: 18px;
+    }
+  }
+
+  .form-toggle {
+    &__caption {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .form-control {
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .form-toggle {
+    &__caption {
+      font-size: 16px;
+    }
   }
 }
