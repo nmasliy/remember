@@ -4,7 +4,7 @@
 
   &__main {
     padding: 100px 0;
-    height: calc(var(--window-height) - var(--header-height));
+    height: calc(var(--window-height) - var(--header-height) - 80px);
     animation: hide-main 0.7s forwards linear;
     animation-delay: 4.2s;
   }
@@ -66,13 +66,14 @@
   }
 
   &__line {
+    position: absolute;
     left: -50%;
-    top: 0;
+    top: 30%;
     width: 8000px;
     height: 13px;
     background-repeat: repeat-x;
     opacity: 0;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     animation: line 2s forwards linear;
     animation-delay: 2s;
   }
@@ -191,6 +192,13 @@
 
 @media (max-width: $menu-breakpoint) {
   .order-done {
+    &__main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
     &__title {
       font-size: 72px;
     }
@@ -201,6 +209,45 @@
   .order-done {
     &__title {
       font-size: 56px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .order-done {
+    &__title {
+      font-size: 36px;
+    }
+
+    &__box {
+      > img {
+        width: 80px;
+      }
+
+      @keyframes box-scale {
+        20% {
+          transform: scale(1.3);
+        }
+
+        80% {
+          transform: scale(1.3);
+        }
+
+        100% {
+          transform: translate(321px, -9px) scale(0.72);
+        }
+      }
+    }
+
+    &__line {
+      top: 52%;
+      height: 5px;
+    }
+
+    &__truck {
+      > img {
+        width: 80px;
+      }
     }
   }
 }
