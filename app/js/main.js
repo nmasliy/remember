@@ -13,10 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initSlider('.news__slider', {
 		perPage: 2,
 		perMove: 1,
-		pagination: false,
 		gap: 20,
 		speed: 1000,
-		type: 'loop',
 		breakpoints: {
 			768: {
 				perPage: 1,
@@ -26,15 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	initSlider('.reviews__slider', {
 		perPage: 3,
 		perMove: 1,
-		pagination: false,
 		gap: 20,
 		speed: 1000,
-		type: 'loop',
 		breakpoints: {
-			580: {
+			660: {
 				perPage: 1,
 			},
-			900: {
+			1024: {
 				perPage: 2,
 			},
 		},
@@ -69,7 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	initCountdownTimer('.public__timer');
 	initSelects();
 	initArticleLikeDislike();
-	
+	initAdaptive();
+	initBenefitsClickOnMobile();
+
+	// Перемещение элементов на брейкпоинтах
+	function initAdaptive() {
+		moveElementOnBreakpoint({
+			element: '.header__user',
+			breakpoint: 580,
+			to: ['.header__menu', '1']
+		})
+	}
+
 	// Кастомные селекты
 	function initSelects() {
 		const selects = document.querySelectorAll('.custom-select');
@@ -77,6 +84,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		selects.forEach(select => {
 			NiceSelect.bind(select);
 		});
+	}
+
+	// Клик вместо наведения в блоке преимуществ на моб. устройствах
+	function initBenefitsClickOnMobile() {
+		const items = document.querySelectorAll('.benefits__item');
+
+		items.forEach(item => {
+			item.addEventListener('click', (e) => {
+				if (window.innerWidth <= MENU_BREAKPOINT) {
+
+					item.classList.toggle('is-active');
+
+					items.forEach(el => {
+						if (el != item) {
+							el.classList.remove('is-active');
+						}
+					})
+				}
+			})
+		})
 	}
 
 	// Таймер обратного отсчета

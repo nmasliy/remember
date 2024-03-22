@@ -24,22 +24,22 @@
             <nav class="header__nav nav">
               <ul class="header__list">
                 <li class="is-active">
-                  <a href="./">Главная</a>
+                  <a href="./" data-title="Главная">Главная</a>
                 </li>
                 <li>
-                  <a href="./product.html">Магазин</a>
+                  <a href="./product.html" data-title="Магазин">Магазин</a>
                 </li>
                 <li>
-                  <a href="./login.html">Кабинет</a>
+                  <a href="./login.html" data-title="Кабинет">Кабинет</a>
                 </li>
                 <li>
-                  <a href="./about.html">О нас</a>
+                  <a href="./about.html" data-title="О нас">О нас</a>
                 </li>
                 <li>
-                  <a href="./news.html">Новости</a>
+                  <a href="./news.html" data-title="Новости">Новости</a>
                 </li>
                 <li>
-                  <a href="./contacts.html">Контакты</a>
+                  <a href="./contacts.html" data-title="Контакты">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -237,7 +237,7 @@
       </section>
       <section class="banner section">
         <div class="container">
-          <div class="banner__inner" style="background-image: url('img/banner.png');">
+          <div class="banner__inner" style="background-image: url('img/banner.jpg');">
             <h3 class="banner__title"><span>1500</span> КЛИЕНТОВ ПОМНЯТ О БЛИЗКИХ</h3>
           </div>
         </div>
@@ -247,7 +247,7 @@
           <div class="reviews__inner">
             <header class="reviews__header">
               <h3 class="reviews__title title">Что про нас говорят</h3>
-              <a class="reviews__link" href="./reviews.html">Смотреть все</a>
+              <a class="reviews__link" href="./reviews.html" data-text-mobile="Все">Смотреть все</a>
             </header>
             <div class="reviews__slider splide" role="group">
               <div class="reviews__slider-inner">
@@ -313,6 +313,21 @@
                         </div>
                       </article>
                     </li>
+                    <li class="splide__slide">
+                      <article class="reviews-card">
+                        <header class="reviews-card__header">
+                          <div class="reviews-card__info">
+                            <p class="reviews-card__title subtitle">Фамилия Имя</p>
+                            <time class="reviews-card__date" datetime="2023-05-25">25.05.2023</time>
+                          </div>
+                          <p class="reviews-card__rating">5.0</p>
+                        </header>
+                        <div class="reviews-card__text">
+                          <p>Содержание Отзыв отзыва Содержание отзыва Содержание отзыва Отзыв Отзыв Содержание отзыва
+                            Содержание Отзыв отзыва Содержание отзыва Содержание </p>
+                        </div>
+                      </article>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -328,6 +343,7 @@
                   </svg>
                 </button>
               </div>
+              <ul class="splide__pagination"></ul>
             </div>
             <div class="reviews__btn-wrapper">
               <a class="reviews__btn btn-primary" href="#">Оформить заказ на QR - Код</a>
@@ -340,7 +356,7 @@
           <div class="news__inner">
             <header class="news__header">
               <h3 class="news__title title">Наши новости</h3>
-              <a class="news__link" href="./news.html">Смотреть все</a>
+              <a class="news__link" href="./news.html" data-text-mobile="Все">Смотреть все</a>
             </header>
             <div class="news__slider splide" role="group">
               <div class="news__slider-inner">
@@ -403,6 +419,63 @@
                         </a>
                       </article>
                     </li>
+                    <li class="splide__slide">
+                      <article class="news-card">
+                        <a class="news-card__wrapper" href="./article.html">
+                          <div class="news-card__img">
+                            <img src="img/news.jpg" width="552" height="248" alt="" />
+                          </div>
+                          <div class="news-card__inner">
+                            <div class="news-card__info">
+                              <h4 class="news-card__title subtitle">Открытие сайта</h4>
+                              <time class="news-card__date" datetime="2023-05-25">25.05.2023</time>
+                            </div>
+                            <div class="news-card__stat">
+                              <p class="news-card__stat-item news-card__views">5</p>
+                              <p class="news-card__stat-item news-card__likes">3</p>
+                            </div>
+                          </div>
+                        </a>
+                      </article>
+                    </li>
+                    <li class="splide__slide">
+                      <article class="news-card">
+                        <a class="news-card__wrapper" href="./article.html">
+                          <div class="news-card__img">
+                            <img src="img/news.jpg" width="552" height="248" alt="" />
+                          </div>
+                          <div class="news-card__inner">
+                            <div class="news-card__info">
+                              <h4 class="news-card__title subtitle">Открытие сайта</h4>
+                              <time class="news-card__date" datetime="2023-05-25">25.05.2023</time>
+                            </div>
+                            <div class="news-card__stat">
+                              <p class="news-card__stat-item news-card__views">5</p>
+                              <p class="news-card__stat-item news-card__likes">3</p>
+                            </div>
+                          </div>
+                        </a>
+                      </article>
+                    </li>
+                    <li class="splide__slide">
+                      <article class="news-card">
+                        <a class="news-card__wrapper" href="./article.html">
+                          <div class="news-card__img">
+                            <img src="img/news.jpg" width="552" height="248" alt="" />
+                          </div>
+                          <div class="news-card__inner">
+                            <div class="news-card__info">
+                              <h4 class="news-card__title subtitle">Открытие сайта</h4>
+                              <time class="news-card__date" datetime="2023-05-25">25.05.2023</time>
+                            </div>
+                            <div class="news-card__stat">
+                              <p class="news-card__stat-item news-card__views">5</p>
+                              <p class="news-card__stat-item news-card__likes">3</p>
+                            </div>
+                          </div>
+                        </a>
+                      </article>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -418,6 +491,7 @@
                   </svg>
                 </button>
               </div>
+              <ul class="splide__pagination"></ul>
             </div>
           </div>
         </div>

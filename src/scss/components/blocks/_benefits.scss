@@ -10,10 +10,28 @@
   &__item {
     position: relative;
     overflow: hidden;
-    border-radius: 28px;
+    border-radius: var(--border-radius);
     padding: 24px;
     min-height: 240px;
     background-color: $substrate;
+
+    &.is-active {
+      .benefits__info-name {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+
+      .benefits__icon {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+
+      .benefits__hover {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
 
     @include hover {
       .benefits__info-name {
@@ -106,5 +124,102 @@
     top: 0;
     width: 100%;
     height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .benefits {
+    &__icon {
+      width: 100px;
+      height: 100px;
+    }
+
+    &__item {
+      min-height: 200px;
+    }
+
+    &__info-name {
+      max-width: 263px;
+    }
+
+    &__name {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .benefits {
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    &__name {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    &__hover {
+      padding: 20px;
+    }
+
+    &__item {
+      padding: 20px;
+      min-height: 140px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits {
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__info-name {
+      max-width: 204px;
+    }
+
+    &__item {
+      min-height: auto;
+
+      &--yellow {
+        &::after {
+          right: 18px;
+          top: 18px;
+          width: 20px;
+          height: 16px;
+        }
+
+        .benefits__info-name {
+          padding-right: 0;
+        }
+      }
+    }
+
+    &__list {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    &__icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    &__name {
+      font-size: 16px;
+    }
   }
 }

@@ -23,12 +23,20 @@
         overflow: visible;
       }
 
+      &__pagination {
+        display: none;
+      }
+
       &__arrow {
         position: absolute;
         top: 50%;
-        opacity: 0.5;
+        opacity: 0.8;
         transform: translateY(-50%);
         transition: opacity $transition;
+
+        &:disabled {
+          opacity: 0.5;
+        }
 
         &--prev {
           left: 0;
@@ -56,17 +64,18 @@
   }
 
   &__link {
+    font-size: 20px;
     transition: color $transition;
 
     @include hover {
-      color: $blue;
+      color: $yellow-dark;
     }
   }
 }
 
 .reviews-card {
   flex-grow: 1;
-  border-radius: 28px;
+  border-radius: var(--border-radius);
   padding: 24px;
   background-color: $substrate;
 
@@ -155,6 +164,98 @@
         background-position: center;
         background-repeat: no-repeat;
         transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .reviews {
+    &__slider {
+      margin: -20px;
+      padding: 20px;
+
+      .splide__arrow--prev {
+        left: 3px;
+      }
+
+      .splide__arrow--next {
+        right: 3px;
+      }
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .reviews-card {
+    padding: 20px;
+
+    &__rating {
+      padding-left: 24px;
+      font-size: 20px;
+
+      &::before {
+        width: 19px;
+        height: 18px;
+      }
+    }
+
+    &__header {
+      margin-bottom: 18px;
+    }
+  }
+
+  .reviews {
+    &__header {
+      margin-bottom: 30px;
+    }
+
+    &__btn-wrapper {
+      margin-top: 24px;
+    }
+
+    &__slider {
+      .splide {
+        &__pagination__page {
+          margin: 0 4px;
+          border-radius: 4px;
+          width: 8px;
+          height: 8px;
+          background: rgba($midnight, 50%);
+          transition: $transition;
+
+          &.is-active {
+            width: 24px;
+            background-color: $midnight;
+          }
+        }
+
+        &__pagination {
+          display: flex;
+          justify-content: center;
+          margin-top: 10px;
+        }
+
+        &__arrows {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews {
+    &__header {
+      margin-bottom: 20px;
+    }
+
+    &__link {
+      font-size: 0;
+
+      &::before {
+        content: attr(data-text-mobile);
+        font-size: 20px;
       }
     }
   }

@@ -81,7 +81,7 @@
     transition: color $transition;
 
     @include hover {
-      color: $blue;
+      color: $yellow-dark;
     }
   }
 
@@ -157,5 +157,78 @@
     &.is-disabled {
       opacity: 0.4;
     }
+  }
+}
+
+@media (max-width: 1440px) {
+  .title {
+    font-size: 38px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .decor {
+    &::after {
+      background:
+        url("../img/decor-1.png") top 611px right -60px no-repeat,
+        url("../img/decor-2.png") top 1154px left -60px no-repeat,
+        url("../img/decor-3.png") top 1652px right -60px no-repeat,
+        url("../img/decor-4.png") top 2478px left -60px no-repeat;
+    }
+  }
+
+  .decor-2 {
+    &::after {
+      background:
+        url("../img/decor-1.png") top 151px right -60px no-repeat,
+        url("../img/decor-2.png") top 694px left -60px no-repeat,
+        url("../img/decor-3.png") top 1231px right -60px no-repeat,
+        url("../img/decor-4.png") top 1978px left -60px no-repeat;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+  }
+
+  .decor,
+  .decor-2 {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .section {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 }

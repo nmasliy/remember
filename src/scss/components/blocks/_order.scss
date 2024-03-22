@@ -15,7 +15,7 @@
     @include grid(2, 0);
 
     border: 1px solid #e5e5e5;
-    border-radius: 28px;
+    border-radius: var(--border-radius);
     background-color: $background;
   }
 
@@ -94,7 +94,7 @@
   }
 
   &__finish {
-    border-radius: 28px;
+    border-radius: var(--border-radius);
     background-color: $substrate;
   }
 
@@ -116,6 +116,7 @@
     @include flex-center;
 
     flex-shrink: 0;
+    overflow: hidden;
     margin-right: 20px;
     border-radius: 22px;
     width: 100px;

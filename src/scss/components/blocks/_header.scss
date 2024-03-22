@@ -4,12 +4,13 @@
   padding: 30px 0 12px;
 
   &__inner {
+    position: relative;
     display: flex;
     align-items: center;
   }
 
   &__logo {
-    margin-right: 20px;
+    margin-right: 24px;
   }
 
   &__menu {
@@ -46,8 +47,8 @@
       }
 
       @include hover {
-        text-shadow: 0 0 0.65px $blue, 0 0 0.65px $blue;
-        color: $blue;
+        text-shadow: 0 0 0.65px $yellow-dark, 0 0 0.65px $yellow-dark;
+        color: $yellow-dark;
       }
     }
   }
@@ -84,7 +85,7 @@
       }
 
       .header__user-name {
-        color: $blue;
+        color: $yellow-dark;
       }
     }
   }
@@ -118,20 +119,10 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: transform $transition;
+    transition: translate $transition;
 
     @include hover {
-      transform: translateY(-2px);
-    }
-  }
-}
-
-@media screen and (max-width: $menu-breakpoint) {
-  .header {
-    &__nav {
-      > ul {
-        display: block;
-      }
+      translate: 0, -2px;
     }
   }
 }
@@ -139,13 +130,11 @@
 .header-notifications {
   &__dropdown {
     position: absolute;
-
-    //  !! !Временно !!!!
-    left: -173px;
+    right: 0;
     top: 100%;
     z-index: 5;
     padding-top: 12px;
-    min-width: 364px;
+    width: 364px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(40px);
@@ -180,12 +169,12 @@
     .header-notifications__time::after {
       content: "";
       flex-shrink: 0;
+      margin-bottom: 2px;
       margin-left: 8px;
       border-radius: 50%;
       width: 12px;
       height: 12px;
       background-color: $yellow;
-      transform: translateY(-50%);
     }
   }
 
@@ -218,7 +207,13 @@
   }
 
   &.is-open {
-
+    .header-notifications {
+      &__dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
   }
 
   @include hover {
@@ -228,6 +223,74 @@
         visibility: visible;
         transform: translateY(0);
       }
+    }
+  }
+}
+
+@media screen and (max-width: $menu-breakpoint) {
+  .header {
+    &__burger {
+      order: 6;
+    }
+
+    &__menu {
+      margin: 0;
+      padding: 0 20px 20px;
+    }
+
+    &__user {
+      margin-right: 24px;
+    }
+
+    &__logo {
+      margin-right: auto;
+      padding-right: 16px;
+
+      img {
+        width: 184px;
+      }
+    }
+
+    &__nav {
+      margin-bottom: 24px;
+      font-size: 24px;
+      color: $midnight;
+
+      li {
+        @include mr(0);
+
+        border-bottom: 1px solid #e5e5e5;
+
+        &.is-active {
+          font-weight: 500;
+          color: $carbon;
+        }
+      }
+
+      a {
+        display: block;
+        padding: 24px 0;
+      }
+
+      > ul {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+
+  }
+}
+
+@media (max-width: 580px) {
+  .header {
+    &__user {
+      margin-top: auto;
+      margin-right: 0;
+      font-size: 24px;
     }
   }
 }

@@ -7,7 +7,7 @@
 
     overflow: hidden;
     border: 1px solid #e5e5e5;
-    border-radius: 28px;
+    border-radius: var(--border-radius);
     background-color: $background;
   }
 
@@ -70,7 +70,7 @@
     transition: color $transition;
 
     @include hover {
-      color: $blue;
+      color: $yellow-dark;
     }
   }
 

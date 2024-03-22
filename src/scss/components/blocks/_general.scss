@@ -56,7 +56,10 @@
   }
 
   &__media {
+    @include aspect-ratio(528px, 296px);
+
     position: relative;
+    display: block;
     overflow: hidden;
     border-radius: 36px;
 
@@ -80,6 +83,72 @@
       img {
         transform: scale(1.05);
       }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .general {
+    &__subtitle {
+      font-size: 24px;
+    }
+
+    &__text {
+      font-size: 24px;
+    }
+
+    &__inner {
+      gap: 30px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .general {
+    &__media {
+      border-radius: 20px;
+
+      &::before {
+        width: 71px;
+        height: 84px;
+      }
+    }
+
+    &__subtitle {
+      font-size: 22px;
+    }
+
+    &__text {
+      font-size: 20px;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .general {
+    &__inner {
+      display: block;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+    }
+
+    &__info {
+      margin-bottom: 32px;
+    }
+
+    &__text {
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
     }
   }
 }

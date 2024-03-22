@@ -35,7 +35,7 @@ function moveElementOnBreakpoint({ element: movedSelector, to: [toSelector, toPo
   const movedNode = document.querySelector(movedSelector);
 
   if (!movedNode) {
-    console.error(`${movedSelector} is not valid selector!`)
+    // console.error(`${movedSelector} is not valid selector!`)
     return;
   }
 
@@ -45,7 +45,7 @@ function moveElementOnBreakpoint({ element: movedSelector, to: [toSelector, toPo
   const toNode = document.querySelector(toSelector);
 
   if (!toNode) {
-    console.error(`${toSelector} is not valid selector!`)
+    // console.error(`${toSelector} is not valid selector!`)
     return;
   }
 

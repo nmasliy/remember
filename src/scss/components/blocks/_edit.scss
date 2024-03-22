@@ -35,7 +35,7 @@
       transition: $transition;
 
       @include hover {
-        color: $blue;
+        color: $yellow;
       }
     }
   }
@@ -295,7 +295,7 @@
     transition: color $transition;
 
     @include hover {
-      color: $blue;
+      color: $yellow-dark;
     }
   }
 }
@@ -309,7 +309,7 @@
     transition: transform $transition;
 
     img {
-      border-radius: 28px;
+      border-radius: var(--border-radius);
 
       &:nth-child(1) {
         position: relative;

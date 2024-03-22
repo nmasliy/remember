@@ -2,7 +2,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: var(--header-height);
   bottom: 0;
   z-index: 8;
   display: none;
@@ -21,22 +21,16 @@
   .menu {
     position: fixed;
     left: 0;
-    top: 0;
+    top: var(--header-height);
     z-index: 40;
     display: none;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
-    max-width: 280px;
-    background-color: $white;
+    height: calc(var(--window-height) - var(--header-height));
+    background-color: $background;
     opacity: 0;
     transform: translateX(-100%);
     transition: transform $menu-transition, opacity $menu-transition;
-
-    &__socials {
-      ul {
-        @include flex-center;
-      }
-    }
 
     &__close {
       position: absolute;

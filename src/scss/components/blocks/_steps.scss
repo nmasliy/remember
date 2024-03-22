@@ -12,7 +12,7 @@
     --padding: 32px;
     --background: #f9f9f9;
 
-    border-radius: 28px;
+    border-radius: var(--border-radius);
     padding: var(--padding);
     background-color: var(--background);
   }
@@ -38,11 +38,14 @@
   &__item--lg {
     --padding: 40px;
 
-    display: grid;
-    align-items: center;
+    position: relative;
     grid-column: span 3;
-    grid-template-columns: 560fr 490fr;
-    gap: 33px;
+    overflow: hidden;
+    min-height: 240px;
+
+    .steps__info {
+      max-width: 48%;
+    }
   }
 
   &__icon {
@@ -61,7 +64,79 @@
   }
 
   &__img {
-    margin-right: -20px;
-    margin-bottom: -40px;
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .steps {
+    &__icon {
+      margin-bottom: 18px;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .steps {
+    &__list {
+      gap: 10px;
+    }
+
+    &__item {
+      --padding: 20px;
+
+      &--yellow {
+        &::after {
+          width: 20px;
+          height: 16px;
+        }
+      }
+
+      &--lg {
+        .steps__info {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__img {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: -20px;
+      margin: 0 auto;
+      margin-right: -25px;
+      margin-left: -25px;
+      max-width: none;
+      text-align: center;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .steps {
+    &__icon {
+      margin-bottom: 12px;
+    }
+
+    &__list {
+      display: block;
+    }
+
+    &__item {
+      @include mb(10px);
+    }
   }
 }

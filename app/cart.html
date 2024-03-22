@@ -24,22 +24,22 @@
             <nav class="header__nav nav">
               <ul class="header__list">
                 <li class="is-active">
-                  <a href="./">Главная</a>
+                  <a href="./" data-title="Главная">Главная</a>
                 </li>
                 <li>
-                  <a href="./product.html">Магазин</a>
+                  <a href="./product.html" data-title="Магазин">Магазин</a>
                 </li>
                 <li>
-                  <a href="./login.html">Кабинет</a>
+                  <a href="./login.html" data-title="Кабинет">Кабинет</a>
                 </li>
                 <li>
-                  <a href="./about.html">О нас</a>
+                  <a href="./about.html" data-title="О нас">О нас</a>
                 </li>
                 <li>
-                  <a href="./news.html">Новости</a>
+                  <a href="./news.html" data-title="Новости">Новости</a>
                 </li>
                 <li>
-                  <a href="./contacts.html">Контакты</a>
+                  <a href="./contacts.html" data-title="Контакты">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -65,13 +65,13 @@
           <h1 class="product__title product__title--main title">Корзина</h1>
           <div class="product__inner">
             <div class="product__img">
-              <img src="img/qr.png" width="278" height="262" alt="">
+              <img src="img/qr-box.jpg" width="420" height="384" alt="">
             </div>
             <div class="product__content">
               <h2 class="product__title title">Название товара</h2>
               <div class="product__form">
                 <form>
-                  <div class="product__counter counter">
+                  <div class="product__counter product__counter--cart counter">
                     <button class="counter__btn counter__btn--minus" type="button"></button>
                     <input class="counter__input" type="number" name="product_count" min="1" max="99" value="1" />
                     <button class="counter__btn counter__btn--plus" type="button"></button>

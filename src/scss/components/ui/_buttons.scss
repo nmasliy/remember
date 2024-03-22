@@ -277,8 +277,6 @@
 
   @include hover {
     color: $carbon;
-
-    // transform: rotate(30deg);
   }
 }
 
@@ -289,5 +287,41 @@
 
   @include hover {
     color: #e7d154;
+  }
+}
+
+@media (max-width: 1440px) {
+  .btn-danger,
+  .btn-primary,
+  .btn-outline,
+  .btn-secondary,
+  .btn-transparent {
+    font-size: 24px;
+
+    &--sm {
+      font-size: 18px;
+    }
+
+    &--xs {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .btn-danger,
+  .btn-primary,
+  .btn-outline,
+  .btn-secondary,
+  .btn-transparent {
+    font-size: 20px;
+
+    &--sm {
+      font-size: 16px;
+    }
+
+    &--xs {
+      font-size: 16px;
+    }
   }
 }

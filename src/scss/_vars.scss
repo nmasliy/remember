@@ -1,10 +1,11 @@
 // root
 :root {
   --content-width: 1120px;
-  --container-offset: 10px;
+  --container-offset: 20px;
   --container-width: calc(var(--content-width) + var(--container-offset) * 2);
   --window-height: 100%;
   --header-height: 86px;
+  --border-radius: 28px;
 }
 
 // font
@@ -26,5 +27,20 @@ $white: #ebebe7;
 $background: #fff;
 $blue: #1a5fd0;
 $yellow: #ffe661;
+$yellow-dark: #d6c150;
 $red: #ff8a8a;
 $green: #84dc68;
+
+@media (max-width: $menu-breakpoint) {
+  :root {
+    --container-offset: 12px;
+    --header-height: 80px;
+    --border-radius: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-offset: 8px;
+  }
+}

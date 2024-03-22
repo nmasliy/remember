@@ -39,6 +39,10 @@
 
 .nice-select .list {
   border-radius: 0 0 16px 16px;
+
+  .selected {
+    display: none;
+  }
 }
 
 .nice-select .nice-select-dropdown {

@@ -1,7 +1,7 @@
 .burger {
-  $width: 20px;
-  $height: 16px;
-  $line-height: 2px;
+  $width: 26px;
+  $height: 24px;
+  $line-height: 3px;
 
   position: relative;
   display: none;
@@ -18,6 +18,7 @@
     content: "";
     position: absolute;
     left: 0;
+    border-radius: 10px;
     width: 100%;
     height: $line-height;
     background-color: currentcolor;
@@ -39,11 +40,12 @@
     left: 0;
     top: 50%;
     display: block;
+    border-radius: 10px;
     width: 100%;
     height: $line-height;
-    background-color: currentcolor;
+    background-color: rgba($carbon, 0.5);
     transform: translateY(-50%);
-    transition: transform $menu-transition;
+    transition: $menu-transition;
   }
 
   &.is-active {
@@ -60,7 +62,8 @@
     }
 
     > span {
-      transform: scale(0);
+      opacity: 0;
+      transform: scale(0.1) translateY(-50%);
     }
   }
 }

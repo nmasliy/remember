@@ -58,7 +58,7 @@ const styles = () => {
           overrideBrowserslist: ['last 5 versions'],
         })
       )
-      // .pipe(gcmq())
+      .pipe(gcmq())
       .pipe(
         gulpif(
           isMinified,

@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 28px;
+    border-radius: var(--border-radius);
     padding: 24px;
     min-height: 240px;
     background-position: center;
@@ -22,6 +22,40 @@
 
     span {
       color: $yellow;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .banner {
+    &__title {
+      font-size: 50px;
+    }
+
+    &__inner {
+      min-height: 210px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .banner {
+    &__inner {
+      min-height: 170px;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    &__title {
+      margin: 0 auto;
+      max-width: 265px;
+      font-size: 24px;
     }
   }
 }
