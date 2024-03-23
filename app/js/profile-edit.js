@@ -309,7 +309,7 @@ function initDatePickers() {
 
   datepickers.forEach((item) => {
     new AirDatepicker(item, {
-      position: 'right top',
+      // position: 'right top',
       prevHtml: `<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M11.728 12.5L12.668 11.56L9.61464 8.5L12.668 5.44L11.728 4.5L7.72797 8.5L11.728 12.5Z" fill="#575965"/>
       <path d="M7.33344 12.5L8.27344 11.56L5.2201 8.5L8.27344 5.44L7.33344 4.5L3.33344 8.5L7.33344 12.5Z" fill="#575965"/>

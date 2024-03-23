@@ -25,6 +25,7 @@
     z-index: 40;
     display: none;
     flex-direction: column;
+    overflow: auto;
     width: 100%;
     height: calc(var(--window-height) - var(--header-height));
     background-color: $background;

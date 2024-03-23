@@ -5,15 +5,6 @@
     @include grid(2, 20px);
   }
 
-  &__col {
-  }
-
-  &__form {
-  }
-
-  &__form-inner {
-  }
-
   &__title {
     margin-bottom: 18px;
   }
@@ -87,6 +78,7 @@
 
   &__socials {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin: -12px;
@@ -107,6 +99,81 @@
       @include hover {
         transform: translateY(-2px);
       }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .contacts {
+    &__info-item,
+    &__file {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .contacts {
+    padding-top: 0;
+
+    &__info-item,
+    &__file {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    padding-top: 0;
+
+    &__title {
+      margin-bottom: 12px;
+    }
+
+    &__socials {
+      a {
+        width: 30px;
+        height: 30px;
+        background-size: 30px;
+      }
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+
+    &__form {
+      margin-bottom: 20px;
+    }
+
+    &__file {
+      margin-bottom: 20px;
+      font-size: 16px;
+
+      span {
+        padding-left: 28px;
+
+        &::before {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    &__btn {
+      font-size: 16px;
+    }
+
+    &__info-item {
+      @include mb(12px);
+
+      padding: 12px 12px 12px 46px;
+      font-size: 16px;
+      background-position: left 12px center;
+      background-size: 24px;
     }
   }
 }

@@ -197,6 +197,14 @@
 }
 
 @media (max-width: $menu-breakpoint) {
+  .news-page {
+    padding-top: 0;
+
+    &__list {
+      margin-bottom: 24px;
+    }
+  }
+
   .news-card {
     &__stat-item {
       @include mr(12px);
@@ -250,6 +258,19 @@
 }
 
 @media (max-width: 768px) {
+  .news-page {
+    padding-top: 0;
+
+    &__list {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    &__item {
+      @include mb(10px);
+    }
+  }
+
   .news {
     &__header {
       margin-bottom: 20px;

@@ -31,9 +31,6 @@
     }
   }
 
-  &__form-inner {
-  }
-
   &__subtitle {
     margin-bottom: 24px;
     font-size: 28px;
@@ -76,5 +73,71 @@
 
   &__btn {
     @include mb(24px);
+  }
+}
+
+@media (max-width: 1440px) {
+  .login {
+    &__text {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .login {
+    padding-top: 0;
+
+    &__text {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    &__form {
+      padding: 0;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__inner {
+      display: block;
+      border: none;
+      border-radius: 0;
+    }
+
+    &__img {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .login {
+    padding-top: 0;
+
+    &__bottom {
+      margin: 12px 0;
+    }
+
+    &__btn {
+      @include mb(20px);
+
+      font-size: 16px;
+    }
+
+    &__subtitle {
+      margin-bottom: 8px;
+    }
+
+    &__title {
+      margin-bottom: 12px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
   }
 }

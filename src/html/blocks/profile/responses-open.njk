@@ -5,35 +5,37 @@
       <div class="responses__form">
         <form>
           <div class="responses__item">
-            <div class="responses__header">
-              <div class="responses__info">
-                <p class="responses__name">Фамилия Имя</p>
-                <p class="responses__date">01.01.2000 12:12</p>
-              </div>
-              <div class="responses__buttons">
-                <div class="responses__status">
-                  <select class="custom-select">
-                    <option value="">Статус</option>
-                    <option value="new">New</option>
-                    <option value="published">Опубликовано</option>
-                    <option value="refused">Отклонено</option>
-                  </select>
+            <div class="responses__item-inner">
+              <div class="responses__header responses__header--wrap">
+                <div class="responses__info">
+                  <p class="responses__name">Фамилия Имя</p>
+                  <p class="responses__date">01.01.2000 12:12</p>
                 </div>
-                <button class="responses__btn responses__delete" title="Удалить отклик"
-                  data-modal="modal-response-delete"></button>
+                <div class="responses__buttons">
+                  <div class="responses__status">
+                    <select class="custom-select">
+                      <option value="">Статус</option>
+                      <option value="new">New</option>
+                      <option value="published">Опубликовано</option>
+                      <option value="refused">Отклонено</option>
+                    </select>
+                  </div>
+                  <button class="responses__btn responses__delete" title="Удалить отклик"
+                    data-modal="modal-response-delete"></button>
+                </div>
               </div>
-            </div>
-            <div class="responses__text">
-              <p>
-                Содержание отклика Содержание отклика Содержание отклика Содержание отклика Содержание отклика
-                Содержание
-                отклика Содержание отклика Содержание отклика Содержание отклика Содержание отклика </p>
-            </div>
-            <div class="responses__answer">
-              <p class="responses__answer-title subtitle">Ответ на отклик</p>
-              <textarea class="responses__answer-textarea form-control"
-                placeholder="Введите ваш ответ на отклик"></textarea>
-              <button class="responses__answer-btn btn-primary btn-primary--sm" disabled>Сохранить</button>
+              <div class="responses__text">
+                <p>
+                  Содержание отклика Содержание отклика Содержание отклика Содержание отклика Содержание отклика
+                  Содержание
+                  отклика Содержание отклика Содержание отклика Содержание отклика Содержание отклика </p>
+              </div>
+              <div class="responses__answer">
+                <p class="responses__answer-title subtitle">Ответ на отклик</p>
+                <textarea class="responses__answer-textarea form-control"
+                  placeholder="Введите ваш ответ на отклик"></textarea>
+                <button class="responses__answer-btn btn-primary btn-primary--sm" disabled>Сохранить</button>
+              </div>
             </div>
           </div>
         </form>

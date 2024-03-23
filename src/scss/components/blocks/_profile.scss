@@ -26,7 +26,7 @@
     border-radius: 12px;
     padding: 12px 17px 12px 45px;
     color: $red;
-    background: rgba(255, 84, 84, 20%);
+    background-color: #fdd;
     transition: background $transition;
 
     &::before {
@@ -41,7 +41,7 @@
     }
 
     @include hover {
-      background-color: rgba(255, 84, 84, 25%);
+      background-color: #ffd4d4;
     }
   }
 
@@ -62,6 +62,10 @@
 
   &__title {
     margin-right: 12px;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   &__items {
@@ -70,5 +74,79 @@
 
   &__item {
     @include mb(24px);
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .profile {
+    &__container {
+      max-width: 100%;
+    }
+  }
+
+  .profile-page {
+    &__inner {
+      display: block;
+
+      .profile-page__aside {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .profile {
+    &__title {
+      margin-right: 0;
+      font-size: 24px;
+
+      &--mobile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        padding-right: 100px;
+        min-height: 45px;
+      }
+    }
+
+    &__logout {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 15px 17px 14px 40px;
+      font-size: 12px;
+
+      &::before {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &__header {
+      position: relative;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    &__item {
+      @include mb(12px);
+    }
+
+    &__items {
+      margin-bottom: 12px;
+    }
+
+    &__togglers {
+      margin-bottom: 6px;
+    }
+  }
+
+  .profile-page {
+    padding-top: 10px;
+
+    &__pagination {
+      padding-top: 12px;
+    }
   }
 }

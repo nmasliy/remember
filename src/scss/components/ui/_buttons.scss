@@ -11,7 +11,7 @@
   text-align: center;
   color: $carbon;
   background: $yellow;
-  transition: $transition;
+  transition: background $transition, color $transition, border $transition;
   cursor: pointer;
 
   i {
@@ -61,7 +61,7 @@
   text-align: center;
   color: $yellow;
   background: $carbon;
-  transition: $transition;
+  transition: background $transition, color $transition, border $transition;
   cursor: pointer;
 
   i {
@@ -207,7 +207,7 @@
   text-align: center;
   color: $red;
   background: transparent;
-  transition: $transition;
+  transition: background $transition, color $transition, border $transition;
   cursor: pointer;
 
   i {
@@ -251,7 +251,7 @@
   box-shadow: none;
   color: $midnight;
   background: 0;
-  transition: $transition;
+  transition: background $transition, color $transition, border $transition;
   cursor: pointer;
 
   &::before,
@@ -323,6 +323,19 @@
 
     &--xs {
       font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-danger,
+  .btn-primary,
+  .btn-outline,
+  .btn-secondary,
+  .btn-transparent {
+    i {
+      width: 18px;
+      height: 18px;
     }
   }
 }

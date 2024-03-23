@@ -39,6 +39,8 @@
 
 .nice-select .list {
   border-radius: 0 0 16px 16px;
+  padding-right: 16px;
+  padding-left: 16px;
 
   .selected {
     display: none;
@@ -56,19 +58,29 @@
   background-color: $substrate;
 
   li {
-    border-top: 1px solid #e5e5e5;
-    padding-right: 16px;
-    padding-left: 16px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-right: 0;
+    padding-left: 0;
     font-size: 20px;
     background-color: $substrate;
 
     &:first-child {
-      border-top: none;
       opacity: 0.5;
     }
 
     &:last-child {
+      border-bottom: none;
       border-radius: 0 0 16px 16px;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .nice-select {
+    font-size: 16px;
+  }
+
+  .nice-select .nice-select-dropdown li {
+    font-size: 16px;
   }
 }

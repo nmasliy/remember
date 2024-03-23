@@ -8,6 +8,7 @@
 
   &__title {
     margin-right: 12px;
+    font-weight: 600;
   }
 
   &__item {
@@ -138,6 +139,93 @@
 
     .qr-card__toggle {
       transform: translateY(-50%) rotate(180deg);
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+
+}
+
+@media (max-width: 768px) {
+  .qr {
+    &__title {
+      font-size: 24px;
+    }
+
+    &__item {
+      @include mb(12px);
+    }
+
+    &__btn {
+      font-size: 0;
+
+      &::before {
+        content: attr(data-text-mobile);
+        font-size: 16px;
+      }
+    }
+  }
+
+  .qr-card {
+    display: block;
+    padding: 12px;
+
+    &__toggle {
+      right: 3px;
+      top: 3px;
+      width: 18px;
+      height: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L9 8L16 2' stroke='%23575965' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+      transform: none;
+    }
+
+    &__info-top {
+      min-height: 48px;
+    }
+
+    &__name {
+      padding-right: 30px;
+    }
+
+    &__info {
+      padding-right: 0;
+    }
+
+    &__img {
+      width: 48px;
+      height: 48px;
+    }
+
+    &__hidden {
+      margin-left: -64px;
+
+      td,
+      th {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+    }
+
+    &__body {
+      grid-template-columns: 48px 1fr;
+      margin-bottom: 12px;
+    }
+
+    &__buttons {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .qr {
+    &__title {
+      font-size: 20px;
+    }
+
+    &__btn {
+      padding: 12px;
     }
   }
 }

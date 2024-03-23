@@ -244,7 +244,6 @@
   }
 
   &__more-wrapper {
-    margin-bottom: 24px;
     text-align: center;
   }
 }
@@ -329,5 +328,292 @@
 
   &__more-wrapper {
     text-align: center;
+  }
+}
+
+@media (max-width: 1440px) {
+  .public {
+    &__name {
+      font-size: 26px;
+    }
+
+    &__info,
+    &__timer,
+    &__candle-btn {
+      font-size: 24px;
+    }
+  }
+
+  .public-desc {
+    &__text {
+      font-size: 24px;
+    }
+  }
+
+  .public-reviews {
+    &__name {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .public {
+    padding-top: 10px;
+
+    &__albums {
+      margin-bottom: 30px;
+    }
+
+    &__tabs {
+      margin-bottom: 20px;
+    }
+
+    &__slider {
+      .splide__arrows {
+        display: none;
+      }
+    }
+
+    &__bg {
+      height: 220px;
+    }
+
+    &__box {
+      align-items: flex-end;
+      padding: 16px;
+    }
+
+    &__avatar {
+      top: auto;
+      margin-top: -52px;
+      margin-bottom: 10px;
+    }
+
+    &__timer {
+      margin-bottom: 10px;
+    }
+
+    &__box-right {
+      flex-direction: column-reverse;
+    }
+
+    &__candle-icon {
+      margin-bottom: 10px;
+    }
+
+    &__candle-btn {
+      border-radius: 12px;
+    }
+
+    &__candle-info {
+      margin-right: 0;
+    }
+
+    &__box-left {
+      display: block;
+    }
+
+    &__info,
+    &__timer,
+    &__candle-btn {
+      font-size: 20px;
+    }
+  }
+
+  .public-desc {
+    &__text {
+      font-size: 20px;
+    }
+  }
+
+  .public-reviews {
+    &__name {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .public-gallery {
+    &__list {
+      margin-bottom: 16px;
+    }
+
+    &__play {
+      position: static;
+      width: 12px;
+      height: 15px;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='15' viewBox='0 0 12 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.8' d='M10.3681 5.71911C11.5566 6.50064 11.5566 8.52357 10.3681 9.3051L3.19177 14.0234C2.03665 14.7829 0.617188 13.7943 0.617188 12.2306V2.79365C0.617188 1.2299 2.03665 0.241349 3.19177 1.00076L10.3681 5.71911Z' fill='%23333333'/%3E%3C/svg%3E%0A");
+      transform: none;
+    }
+
+    &__pin {
+      position: static;
+      width: 14px;
+      height: 15px;
+    }
+
+    &__controls {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      display: flex;
+
+      > * {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .public-desc {
+    &__text {
+      font-size: 16px;
+    }
+  }
+
+  .public {
+    &__albums {
+      margin-bottom: 24px;
+    }
+
+    &__slider {
+      .splide {
+        &__slide {
+          width: 110px;
+        }
+      }
+
+      .album-card {
+        &__name {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &__candle-icon {
+      width: 66px;
+      height: 66px;
+
+      &::before {
+        bottom: -2px;
+        width: 17px;
+        height: 29px;
+      }
+    }
+
+    &__bg {
+      height: auto;
+      min-height: 120px;
+      aspect-ratio: 373 / 120;
+    }
+
+    &__box {
+      grid-template-columns: 1fr 120px;
+      margin-top: -35px;
+      gap: 16px;
+    }
+
+    &__btn {
+      padding: 7px 10px;
+      font-size: 12px;
+    }
+
+    &__years {
+      margin-bottom: 10px;
+    }
+
+    &__avatar {
+      border-width: 3px;
+      width: 94px;
+      height: 94px;
+    }
+
+    &__candle-btn {
+      padding: 10px 12px;
+      width: 100%;
+    }
+
+    &__candle-info {
+      width: 100%;
+    }
+
+    &__timer {
+      width: auto;
+    }
+
+    &__candle-animation {
+      top: -2px;
+      width: 52px;
+    }
+
+    &__name {
+      font-size: 16px;
+    }
+
+    &__info,
+    &__timer,
+    &__candle-btn {
+      font-size: 12px;
+    }
+  }
+
+  .public-reviews {
+    &__name {
+      font-size: 16px;
+    }
+
+    &__date {
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+
+    &__text {
+      margin-bottom: 6px;
+    }
+
+    &__toggle {
+      font-size: 12px;
+    }
+
+    &__list {
+      margin-bottom: 16px;
+    }
+
+    &__item {
+      @include mb(10px);
+
+      padding: 12px 12px 0;
+    }
+
+    &__answer {
+      padding-left: 20px;
+    }
+
+    &__btn {
+      position: static;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .public {
+    .splide__track {
+      overflow: visible;
+    }
+  }
+}
+
+@media (max-width: 385px) {
+  .public {
+    &__btn {
+      padding: 7px;
+    }
+
+    &__box {
+      grid-template-columns: 1fr 100px;
+      padding: 16px 10px;
+    }
   }
 }

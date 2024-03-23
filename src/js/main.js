@@ -43,13 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		speed: 1000,
 		breakpoints: {
 			580: {
-				perPage: 2,
-			},
-			900: {
-				perPage: 3,
+				autoWidth: true,
+				gap: 10,
 			},
 			1024: {
-				perPage: 4
+				perPage: 4,
+				gap: 20,
+			},
+			1200: {
+				gap: 20
 			}
 		},
 	});
@@ -67,6 +69,50 @@ document.addEventListener('DOMContentLoaded', () => {
 	initArticleLikeDislike();
 	initAdaptive();
 	initBenefitsClickOnMobile();
+	initTipsOnMobile();
+	initHeaderNotificationsOnMobile();
+
+	// Клик вместо наведения в уведомлениях на моб. устройствах
+	function initHeaderNotificationsOnMobile() {
+
+		document.addEventListener('click', (e) => {
+			const container = e.target.closest('.header__notifications');
+			const dropdown = e.target.closest('.header-notifications__dropdown');
+
+			if (window.innerWidth > MENU_BREAKPOINT) return;
+
+			if (container && !dropdown) {
+				e.preventDefault();
+				container.classList.toggle('is-open');
+			} else {
+				document.querySelector('.header__notifications').classList.remove('is-open');
+			}
+		})
+
+	}
+
+	// Клик вместо наведения на подсказки
+	function initTipsOnMobile() {
+		document.addEventListener('click', (e) => {
+			if (window.innerWidth > MENU_BREAKPOINT) return;
+
+			const items = document.querySelectorAll('.tip.is-active');
+			const tip = e.target.closest('.tip');
+
+			if (tip) {
+				e.preventDefault();
+				tip.classList.toggle('is-active');
+
+				items.forEach(el => {
+					if (el != tip) {
+						el.classList.remove('is-active');
+					}
+				})
+			} else {
+				items.forEach(item => item.classList.remove('is-active'));
+			}
+		})
+	}
 
 	// Перемещение элементов на брейкпоинтах
 	function initAdaptive() {
@@ -74,13 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			'.header__user',
 			{ fromSelector: '.header__burger', fromPosition: 'beforebegin' },
 			{ toSelector: '.header__menu', toPosition: 'beforeend' },
-			580
+			MENU_BREAKPOINT
 		);
 		moveElementOnBreakpoint(
 			'.product__price',
 			{ fromSelector: '.product__info', fromPosition: 'beforebegin' },
 			{ toSelector: '.product__form-inner', toPosition: 'afterbegin' },
-			1024
+			MENU_BREAKPOINT
 		);
 		moveElementOnBreakpoint(
 			'.product__price',
@@ -93,6 +139,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			{ fromSelector: '.product__form form', fromPosition: 'beforeend' },
 			{ toSelector: '.product__inner--cart', toPosition: 'afterend' },
 			768
+		);
+		moveElementOnBreakpoint(
+			'.profile-page__aside',
+			{ fromSelector: '.profile-page__inner', fromPosition: 'afterbegin' },
+			{ toSelector: '.header__menu', toPosition: 'beforeend' },
+			MENU_BREAKPOINT
+		);
+		moveElementOnBreakpoint(
+			'.modal-album__remove',
+			{ fromSelector: '.modal-album__footer', fromPosition: 'afterbegin' },
+			{ toSelector: '.modal-album__header-buttons', toPosition: 'beforeend' },
+			580
 		);
 	}
 
@@ -149,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			if (difference < 0) {
 				clearInterval(timerInterval);
-				timerElement.innerHTML = "Expired";
+				timerElement.innerHTML = "00:00:00:00";
 				return;
 			}
 

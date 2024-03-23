@@ -67,3 +67,43 @@
     background-color: $substrate;
   }
 }
+
+@media (max-width: 1440px) {
+  .ql-snow.ql-container {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .ql-snow.ql-container {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ql-snow {
+    .ql-container {
+      font-size: 16px;
+    }
+
+    .ql-picker {
+      width: 54px;
+      height: 36px;
+    }
+
+    .ql-color-picker .ql-picker-label,
+    .ql-icon-picker .ql-picker-label,
+    .ql-icon-picker .ql-picker-item {
+      padding: 6px 12px;
+      width: 54px;
+      height: 36px;
+    }
+
+    &.ql-toolbar button,
+    .ql-toolbar button {
+      padding: 6px 12px;
+      width: 54px;
+      height: 36px;
+    }
+  }
+}

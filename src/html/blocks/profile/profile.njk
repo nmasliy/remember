@@ -1,63 +1,62 @@
 <section class="profile">
-  <div class="container">
-    <div class="profile__inner">
-      <div class="profile__form">
-        <form>
-          <div class="profile__form-inner">
-            <div class="profile__header">
-              <h1 class="profile__title subtitle">Настройки профиля</h1>
-              <button class="profile__logout" type="button">Выйти</button>
+  <div class="profile__inner">
+    <div class="profile__form">
+      <form>
+        <div class="profile__form-inner">
+          <div class="profile__header">
+            <h1 class="profile__title profile__title--mobile subtitle">Профиль</h1>
+            <h2 class="profile__title subtitle">Настройки профиля</h2>
+            <button class="profile__logout" type="button">Выйти</button>
+          </div>
+          <div class="profile__container">
+            <div class="profile__items">
+              <label class="profile__item form-label">
+                <span class="form-label__text">ФИО</span>
+                <input class="profile__input form-control" type="text" disabled value="Иванов Иван Иванович" />
+              </label>
+              <label class="profile__item form-label">
+                <span class="form-label__text">Номер телефона</span>
+                <input class="profile__input form-control" disabled type="tel" value="+38 (012) 345 - 67 - 89" />
+              </label>
             </div>
-            <div class="profile__container">
-              <div class="profile__items">
-                <label class="profile__item form-label">
-                  <span class="form-label__text">ФИО</span>
-                  <input class="profile__input form-control" type="text" disabled value="Иванов Иван Иванович" />
-                </label>
-                <label class="profile__item form-label">
-                  <span class="form-label__text">Номер телефона</span>
-                  <input class="profile__input form-control" disabled type="tel" value="+38 (012) 345 - 67 - 89" />
-                </label>
-              </div>
-              <div class="profile__togglers">
-                <label class="profile__toggle form-toggle">
-                  <span class="form-toggle__caption">Telegram</span>
-                  <span class="form-toggle__content">
-                    <input type="checkbox" />
-                    <span class="form-toggle__element"></span>
-                  </span>
-                </label>
-                <label class="profile__toggle form-toggle">
-                  <span class="form-toggle__caption">What’s App</span>
-                  <span class="form-toggle__content">
-                    <input type="checkbox" />
-                    <span class="form-toggle__element"></span>
-                  </span>
-                </label>
-              </div>
-              <div class="profile__items">
-                <label class="profile__item form-label">
-                  <span class="form-label__text">Почта</span>
-                  <!-- Класс is-disabled, для серого текста в инпуте -->
-                  <input class="profile__input form-control is-disabled" type="text" disabled
-                    value="testmail@gmail.com" />
-                </label>
-                <label class="profile__item form-label">
-                  <span class="form-label__text">Пароль</span>
-                  <div class="profile__password form-edit">
-                    <input class="profile__input form-control" disabled type="password" value="dasdasdsaa" />
-                    <button class="form-edit__btn" type="button" title="Изменить пароль"
-                      data-modal="modal-change-password"></button>
-                  </div>
-                </label>
-              </div>
-              <div class="text-center">
-                <button class="profile__btn btn-primary btn-primary--sm">Сохранить</button>
-              </div>
+            <div class="profile__togglers">
+              <label class="profile__toggle form-toggle">
+                <span class="form-toggle__caption">Telegram</span>
+                <span class="form-toggle__content">
+                  <input type="checkbox" />
+                  <span class="form-toggle__element"></span>
+                </span>
+              </label>
+              <label class="profile__toggle form-toggle">
+                <span class="form-toggle__caption">What’s App</span>
+                <span class="form-toggle__content">
+                  <input type="checkbox" />
+                  <span class="form-toggle__element"></span>
+                </span>
+              </label>
+            </div>
+            <div class="profile__items">
+              <label class="profile__item form-label">
+                <span class="form-label__text">Почта</span>
+                <!-- Класс is-disabled, для серого текста в инпуте -->
+                <input class="profile__input form-control is-disabled" type="text" disabled
+                  value="testmail@gmail.com" />
+              </label>
+              <label class="profile__item form-label">
+                <span class="form-label__text">Пароль</span>
+                <div class="profile__password form-edit">
+                  <input class="profile__input form-control" disabled type="password" value="dasdasdsaa" />
+                  <button class="form-edit__btn" type="button" title="Изменить пароль"
+                    data-modal="modal-change-password"></button>
+                </div>
+              </label>
+            </div>
+            <div class="text-center">
+              <button class="profile__btn btn-primary btn-primary--sm">Сохранить</button>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </div>
 </section>

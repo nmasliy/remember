@@ -9,27 +9,123 @@
     content: attr(data-text);
     position: absolute;
     left: 50%;
-    bottom: 100%;
-    display: none;
-    border: 1px solid rgba($midnight, 0.3);
-    border-radius: 12px;
-    padding: 12px;
-    width: 200px;
-    font-size: 14px;
+    bottom: calc(100% + 10px);
+    z-index: 3;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 4px 8px;
+    width: max-content;
+    max-width: 612px;
+    font-size: 16px;
     color: $carbon;
-    background-color: $background;
-    transform: translateX(-50%);
+    background-color: $substrate;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: $transition;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 3px);
+    z-index: 3;
+    width: 17px;
+    height: 8px;
+    background: url("data:image/svg+xml,%3Csvg width='17' height='8' viewBox='0 0 17 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.51401 5.90685L1.2225 1.3867L1.18402 1.35383C0.888763 1.10145 0.684296 0.926704 0.449341 0.799911C0.241608 0.687809 0.019043 0.605698 -0.2117 0.556015C-0.472687 0.499821 -0.741577 0.499889 -1.12997 0.499992L-1.18069 0.5H-259.4C-261.088 0.5 -262.325 0.499611 -263.3 0.419914C-264.27 0.340698 -264.937 0.185616 -265.497 -0.0994644C-266.532 -0.62677 -267.373 -1.46816 -267.901 -2.50305C-268.186 -3.06255 -268.341 -3.73034 -268.42 -4.69993C-268.5 -5.67536 -268.5 -6.91159 -268.5 -8.6V-36.4C-268.5 -38.0884 -268.5 -39.3246 -268.42 -40.3001C-268.341 -41.2697 -268.186 -41.9374 -267.901 -42.4969C-267.373 -43.5318 -266.532 -44.3732 -265.497 -44.9005C-264.937 -45.1856 -264.27 -45.3407 -263.3 -45.4199C-262.325 -45.4996 -261.088 -45.5 -259.4 -45.5H333.4C335.088 -45.5 336.325 -45.4996 337.3 -45.4199C338.27 -45.3407 338.937 -45.1856 339.497 -44.9005C340.532 -44.3732 341.373 -43.5318 341.901 -42.497C342.186 -41.9375 342.341 -41.2697 342.42 -40.3001C342.5 -39.3246 342.5 -38.0884 342.5 -36.4V-8.6C342.5 -6.91159 342.5 -5.67536 342.42 -4.69992C342.341 -3.73033 342.186 -3.06255 341.901 -2.50304C341.373 -1.46817 340.532 -0.62677 339.497 -0.0994644C338.937 0.185616 338.27 0.340698 337.3 0.419914C336.325 0.499611 335.088 0.5 333.4 0.5H18.117L18.069 0.499992C17.701 0.499901 17.4462 0.49984 17.1978 0.550579C16.9781 0.595459 16.7654 0.669685 16.5656 0.771252C16.3395 0.88612 16.14 1.04477 15.852 1.27387L15.8145 1.30368L9.94785 5.96743C9.57455 6.26421 9.31564 6.4696 9.10013 6.61617C8.8898 6.75921 8.74973 6.82558 8.62305 6.85901C8.35477 6.92983 8.07208 6.92484 7.80649 6.8446C7.68109 6.80672 7.54343 6.73546 7.33832 6.58509C7.12811 6.431 6.87662 6.21661 6.51401 5.90685Z' fill='%23F9F9F9' stroke='%23E5E5E5'/%3E%3C/svg%3E%0A") bottom no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: $transition;
+    pointer-events: none;
   }
 
   &.is-active {
-    &::before {
-      display: block;
+    &::before,
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: all;
     }
   }
 
   @include hover {
+    &::before,
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: all;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .tip {
     &::before {
-      display: block;
+      left: -4px;
+      max-width: 300px;
+      font-size: 14px;
+    }
+
+    &::before,
+    &::after {
+      transform: translateY(-10px);
+    }
+
+    &::after {
+      left: 4px;
+    }
+
+    &.is-active {
+      &::before,
+      &::after {
+        transform: translateY(-10px);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tip {
+    &::before {
+      padding: 10px;
+      max-width: 180px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .tip {
+    &::before {
+      left: calc(100% + 10px);
+      top: 7px;
+      bottom: auto;
+    }
+
+    &::after {
+      left: calc(100% + -1px);
+      top: 9px;
+      transform: translateY(-10px) rotate(90deg);
+    }
+
+    &.is-active {
+      &::after {
+        transform: translateY(0) rotate(90deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 385px) {
+  .tip {
+    &::before {
+      padding: 5px;
+      max-width: 120px;
     }
   }
 }

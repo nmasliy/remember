@@ -7,8 +7,12 @@
     @include mb(20px);
 
     border-radius: var(--border-radius);
-    padding: 24px;
     background-color: $substrate;
+  }
+
+  &__item-inner {
+    display: block;
+    padding: 24px;
   }
 
   &__header {
@@ -100,5 +104,80 @@
 
   &__answer-btn {
     align-self: flex-end;
+  }
+
+  &__info {
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .responses {
+    &__name {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: $menu-breakpoint) {
+  .responses {
+    &__name {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .responses {
+    &__item-inner {
+      padding: 12px;
+    }
+
+    &__btn {
+      @include mr(16px);
+
+      width: 20px;
+      height: 20px;
+    }
+
+    &__item {
+      @include mb(12px);
+    }
+
+    &__badge {
+      padding: 6px;
+      font-size: 16px;
+    }
+
+    &__name {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .responses {
+    &__answer-textarea {
+      margin-bottom: 12px;
+      height: 119px;
+    }
+
+    &__header {
+      .responses__buttons {
+        margin-bottom: 12px;
+      }
+
+      &--wrap {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+@media (max-width: 385px) {
+  .responses {
+    &__badge {
+      font-size: 14px;
+    }
   }
 }
