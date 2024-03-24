@@ -120,31 +120,45 @@
     background-size: cover;
     background-repeat: no-repeat;
     transition: translate $transition;
-
-    @include hover {
-      translate: 0, -2px;
-    }
   }
 }
 
 .header-notifications {
+  .os-theme-dark > .os-scrollbar-vertical,
+  .os-theme-light > .os-scrollbar-vertical {
+    width: 9px;
+  }
+
+  .os-scrollbar-vertical {
+    right: 4px;
+  }
+
+  .os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical {
+    top: 5px;
+    bottom: 5px;
+  }
+
   &__dropdown {
     position: absolute;
     right: 0;
-    top: 100%;
+    top: 82%;
     z-index: 5;
     padding-top: 12px;
     width: 364px;
+    max-width: 100%;
     opacity: 0;
     visibility: hidden;
     transform: translateY(40px);
     transition: $transition;
+    pointer-events: none;
   }
 
   &__list {
     overflow: hidden;
     border: 1px solid #e5e5e5;
     border-radius: 16px;
+    max-height: 415px;
+    background-color: $substrate;
   }
 
   &__item {
@@ -153,7 +167,6 @@
     align-items: center;
     border-bottom: 1px solid #e5e5e5;
     padding: 12px;
-    background-color: $substrate;
 
     &:first-child {
       border-radius: 12px 12px 0 0;
@@ -213,6 +226,7 @@
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+        pointer-events: all;
       }
     }
   }
@@ -223,6 +237,7 @@
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+        pointer-events: all;
       }
     }
   }
@@ -230,6 +245,13 @@
 
 @media screen and (max-width: $menu-breakpoint) {
   .header {
+    &__inner > {
+      .header__user,
+      .header__nav {
+        display: none;
+      }
+    }
+
     &__burger {
       order: 6;
     }
